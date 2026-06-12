@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "download-app",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

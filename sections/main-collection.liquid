@@ -1,0 +1,60 @@
+<section class="container section-padding">
+  <div class="collection-template-grid">
+    
+    <!-- Left: Filters Sidebar -->
+    <aside class="sidebar-filters">
+      <h3 class="filter-title">Browse by</h3>
+      <ul class="filter-list">
+        <li><a href="/collections/all" class="filter-item-link active">All Products</a></li>
+        <li><a href="/collections/cards" class="filter-item-link">Cards</a></li>
+        <li><a href="/collections/stands" class="filter-item-link">Stands</a></li>
+        <li><a href="/collections/leathery-medal" class="filter-item-link">leathery Medal</a></li>
+        <li><a href="/collections/3d-medal" class="filter-item-link">3D Medal</a></li>
+      </ul>
+    </aside>
+    
+    <!-- Right: Products Grid -->
+    <div>
+      <div class="products-header">
+        <div class="products-count">
+          {{ collection.products_count | default: 1 }} {{ collection.products_count | default: 1 | pluralize: 'product', 'products' }}
+        </div>
+        <div class="products-sort">
+          <label for="sort-by" style="font-size: 14px; color: var(--text-gray); margin-right: 8px;">Sort by:</label>
+          <select id="sort-by">
+            <option value="manual">Featured</option>
+            <option value="best-selling">Best selling</option>
+            <option value="title-ascending">Alphabetical, A-Z</option>
+            <option value="price-ascending">Price, low to high</option>
+            <option value="price-descending">Price, high to low</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="products-grid">
+        {% for product in collection.products %}
+          {% render 'product-card', product: product %}
+        {% else %}
+          <!-- Mock card if no products exist in Shopify -->
+          <div class="product-card glass-card">
+            <a href="/products/custom-nfc-card" class="product-card-link">
+              <div class="product-image-container">
+                <img src="{{ 'card-black-edition.png' | asset_url }}" alt="Zaat NFC Card" class="product-card-img">
+              </div>
+              <h3 class="product-card-title">Zaat NFC camouflage Card - Custom Embossed names</h3>
+              <div class="product-card-price">EGP 500.00</div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Grid",
+  "settings": []
+}
+{% endschema %}

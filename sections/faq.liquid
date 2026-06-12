@@ -1,0 +1,93 @@
+<div class="faq-banner">
+  <div class="container">
+    <h1 style="font-size: 48px; margin-bottom: 16px;">Help Center</h1>
+    <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Use this space to promote the business, its products or its services. Help people become familiar with the business and its offerings.</p>
+    
+    <div class="faq-search-wrapper">
+      <svg class="faq-search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" class="faq-search-input" placeholder="Looking for something?">
+    </div>
+  </div>
+</div>
+
+<section class="container section-padding">
+  <div class="faq-tabs-nav">
+    <button type="button" class="faq-tab-btn active" data-category="general">General</button>
+    <button type="button" class="faq-tab-btn" data-category="setup">Setting up FAQs</button>
+  </div>
+  
+  <div class="faq-accordion-list">
+    <!-- General FAQ 1 -->
+    <div class="glass-card faq-accordion-item" data-category="general" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What is an FAQ section?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">An FAQ section can be used to quickly answer common questions about your business like "Where do you ship to?", "What are your opening hours?", or "How can I book a service?".</p>
+      </div>
+    </div>
+    
+    <!-- General FAQ 2 -->
+    <div class="glass-card faq-accordion-item" data-category="general" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Why do FAQs matter?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">FAQs are a great way to help site visitors find quick answers to common questions about your business and create a better navigation experience.</p>
+      </div>
+    </div>
+    
+    <!-- General FAQ 3 -->
+    <div class="glass-card faq-accordion-item" data-category="general" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Where can I add my FAQs?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">You can add FAQs to any page on your site or to your mobile app, making them accessible to your users wherever they are.</p>
+      </div>
+    </div>
+    
+    <!-- Setup FAQ 1 -->
+    <div class="glass-card faq-accordion-item" data-category="setup" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How do I add a new question & answer?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">Go to your app dashboard, click on FAQs, and select "Add New". Type in your question and answer, then click save.</p>
+      </div>
+    </div>
+    
+    <!-- Setup FAQ 2 -->
+    <div class="glass-card faq-accordion-item" data-category="setup" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I insert an image, video, or GIF in my FAQ?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">Yes! You can enrich your FAQ answers by adding rich media assets directly in the editor.</p>
+      </div>
+    </div>
+    
+    <!-- Setup FAQ 3 -->
+    <div class="glass-card faq-accordion-item" data-category="setup" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How do I edit or remove the 'Frequently Asked Questions' title?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">Go to your theme settings in the customizer, open the FAQ section settings, and edit the Title field.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ Accordion",
+  "settings": []
+}
+{% endschema %}

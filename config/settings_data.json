@@ -1,0 +1,24 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      }
+    },
+    "settings": {
+      "color_bg": "#0d0f14",
+      "color_text": "#ffffff",
+      "color_primary": "#3b82f6",
+      "color_card_bg": "#1e293b",
+      "social_linkedin": "https://linkedin.com",
+      "social_facebook": "https://facebook.com",
+      "social_instagram": "https://instagram.com",
+      "social_twitter": "https://x.com"
+    }
+  }
+}

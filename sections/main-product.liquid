@@ -1,0 +1,159 @@
+<section class="container section-padding">
+  <div class="product-template-grid">
+    
+    <!-- Left: Gallery -->
+    <div class="product-gallery-wrapper">
+      <div class="gallery-thumbnails">
+        {% if product.images.size > 0 %}
+          {% for image in product.images %}
+            <button class="thumbnail-btn{% if forloop.first %} active{% endif %}" data-image-src="{{ image.src | img_url: '800x800' }}" data-color-index="{{ forloop.index0 }}">
+              <img src="{{ image.src | img_url: '100x100', crop: 'center' }}" alt="{{ image.alt | escape }}" loading="lazy">
+            </button>
+          {% endfor %}
+        {% else %}
+          <!-- Mock Thumbnails for preview -->
+          <button class="thumbnail-btn active" data-image-src="{{ 'card-black-edition.png' | asset_url }}" data-color-index="0">
+            <img src="{{ 'card-black-edition.png' | asset_url }}" alt="Black Card" loading="lazy">
+          </button>
+          <button class="thumbnail-btn" data-image-src="{{ 'card-chatgpt-1.png' | asset_url }}" data-color-index="1">
+            <img src="{{ 'card-chatgpt-1.png' | asset_url }}" alt="Violet Card" loading="lazy">
+          </button>
+          <button class="thumbnail-btn" data-image-src="{{ 'card-pink-edition.png' | asset_url }}" data-color-index="2">
+            <img src="{{ 'card-pink-edition.png' | asset_url }}" alt="Lilac/White Card" loading="lazy">
+          </button>
+        {% endif %}
+      </div>
+      
+      <div class="gallery-main-image">
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | img_url: '800x800' }}" alt="{{ product.title | escape }}">
+        {% else %}
+          <!-- Mock Main image for preview -->
+          <img src="{{ 'card-black-edition.png' | asset_url }}" alt="Default Custom Card">
+        {% endif %}
+      </div>
+    </div>
+    
+    <!-- Right: Details -->
+    <div class="product-details">
+      <!-- Breadcrumbs -->
+      <div class="product-breadcrumbs">
+        <a href="/">Home</a> &gt; <a href="/collections/all">All Products</a> &gt; {{ product.title | default: "Zaat NFC camouflage Card - Custom Embossed names" }}
+      </div>
+      
+      <h1 class="product-title">{{ product.title | default: "Zaat NFC camouflage Card - Custom Embossed names" }}</h1>
+      <div class="product-price">{{ product.price | default: 50000 | money }}</div>
+      
+      {% form 'product', product, id: 'product-form-selector' %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id | default: 12345678 }}">
+        
+        <!-- Swatches -->
+        <div style="margin-bottom: 24px;">
+          <h4 class="swatch-group-title">Color</h4>
+          <div class="swatch-list">
+            <input type="hidden" name="properties[Color]" id="product-color-input" value="Black">
+            <button type="button" class="swatch-btn active" style="background-color: #000000;" data-value="Black" data-index="0" title="Black"></button>
+            <button type="button" class="swatch-btn" style="background-color: #7c3aed;" data-value="Violet" data-index="1" title="Violet"></button>
+            <button type="button" class="swatch-btn" style="background: linear-gradient(135deg, #e2e8f0, #c084fc);" data-value="Lilac/White" data-index="2" title="Lilac/White"></button>
+          </div>
+        </div>
+        
+        <!-- Custom text Inputs (Properties) -->
+        <div class="customization-box">
+          <h4 class="customization-title">Custom Embossed Details</h4>
+          
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <label for="custom-name">Name (optional)</label>
+              <span id="custom-name-counter" style="font-size: 11px; color: var(--text-muted);">0 / 20</span>
+            </div>
+            <input 
+              type="text" 
+              id="custom-name" 
+              name="properties[Name]" 
+              class="form-control custom-engrave-input" 
+              placeholder="e.g. MOHAMED AHMED" 
+              maxlength="20"
+              data-counter-id="custom-name-counter"
+            >
+          </div>
+          
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <label for="custom-title">Title (optional)</label>
+              <span id="custom-title-counter" style="font-size: 11px; color: var(--text-muted);">0 / 20</span>
+            </div>
+            <input 
+              type="text" 
+              id="custom-title" 
+              name="properties[Title]" 
+              class="form-control custom-engrave-input" 
+              placeholder="e.g. DEVELOPER" 
+              maxlength="20"
+              data-counter-id="custom-title-counter"
+            >
+          </div>
+        </div>
+        
+        <!-- Quantity -->
+        <div class="quantity-picker-wrapper" style="margin: 24px 0;">
+          <label style="font-size: 14px; color: var(--text-gray);">Quantity</label>
+          <div class="quantity-picker">
+            <button type="button" class="quantity-btn dec-btn">-</button>
+            <input type="number" name="quantity" class="quantity-input" value="1" min="1">
+            <button type="button" class="quantity-btn inc-btn">+</button>
+          </div>
+        </div>
+        
+        <!-- Actions -->
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">Add to Cart</button>
+          <button type="button" class="btn btn-dark" style="width: 100%; padding: 16px;">Buy Now</button>
+        </div>
+      {% endform %}
+      
+      <!-- Accordions -->
+      <div class="accordion-wrapper">
+        <div class="accordion-item active">
+          <div class="accordion-header">
+            <span class="accordion-title">Description</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            <p style="margin-bottom: 12px;">Discover the seamless blend of elegance and connectivity with the NFC Prestige Card. Tailored for those who make no compromises on quality and convenience, this card places your identity at the forefront with exquisite embossing.</p>
+            <p>It's more than just sharing contact information; it's about making an unforgettable impression.</p>
+            <p style="margin-top: 12px; font-style: italic; color: #f87171;">Note: This is a customized product, so Cash on Delivery is not available. Online payment is required to confirm your order.</p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-title">Compatibility</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            Works with all modern iOS and Android smartphones featuring NFC technology. No app download is required for the recipient to receive your details.
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span class="accordion-title">Shipping Info</span>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="accordion-content">
+            Custom embossed products are manufactured and shipped within 3-5 business days. International delivery times vary depending on the destination.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Details",
+  "settings": []
+}
+{% endschema %}

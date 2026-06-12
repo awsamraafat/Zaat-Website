@@ -1,0 +1,25 @@
+{% comment %}
+  Renders a product card
+  Usage:
+  {% render 'product-card', product: product %}
+{% endcomment %}
+
+<div class="product-card glass-card">
+  <a href="{{ product.url }}" class="product-card-link">
+    <div class="product-image-container">
+      {% if product.featured_image %}
+        <img 
+          src="{{ product.featured_image | img_url: '600x600', crop: 'center' }}" 
+          alt="{{ product.featured_image.alt | escape }}" 
+          class="product-card-img"
+          loading="lazy"
+        >
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'product-card-img placeholder' }}
+      {% endif %}
+    </div>
+    
+    <h3 class="product-card-title">{{ product.title }}</h3>
+    <div class="product-card-price">{{ product.price | money }}</div>
+  </a>
+</div>

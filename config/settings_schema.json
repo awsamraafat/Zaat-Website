@@ -1,0 +1,68 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Zaat Link Theme",
+    "theme_author": "Antigravity",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://github.com",
+    "theme_support_url": "https://github.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Background Color",
+        "default": "#0d0f14"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary Accent (Blue)",
+        "default": "#3b82f6"
+      },
+      {
+        "type": "color",
+        "id": "color_card_bg",
+        "label": "Card Background",
+        "default": "#1e293b"
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_linkedin",
+        "label": "LinkedIn Link",
+        "default": "https://linkedin.com"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook Link",
+        "default": "https://facebook.com"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram Link",
+        "default": "https://instagram.com"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter",
+        "label": "Twitter/X Link",
+        "default": "https://x.com"
+      }
+    ]
+  }
+]
