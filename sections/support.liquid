@@ -1,0 +1,114 @@
+<div class="faq-banner">
+  <div class="container">
+    <h1 style="font-size: 48px; margin-bottom: 16px;">Support Hub</h1>
+    <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Have questions about your Zaat card or need assistance with your digital profile? Our support team is here to help.</p>
+  </div>
+</div>
+
+<section class="container section-padding">
+  <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: start;">
+    
+    <!-- Left Column: Support info cards -->
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div class="glass-card" style="padding: 24px; border-radius: var(--border-radius-md);">
+        <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent-blue); flex-shrink: 0;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <h3 style="font-size: 18px; margin: 0;">Email Us</h3>
+        </div>
+        <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 12px;">For general inquiries, account issues, or bulk custom order quotes.</p>
+        <a href="mailto:info@zaatlink.com" style="color: var(--accent-blue); font-weight: 600; font-size: 15px;">info@zaatlink.com</a>
+      </div>
+
+      <div class="glass-card" style="padding: 24px; border-radius: var(--border-radius-md);">
+        <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent-blue); flex-shrink: 0;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <h3 style="font-size: 18px; margin: 0;">Phone Support</h3>
+        </div>
+        <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 12px;">Call us Sunday to Thursday, from 9:00 AM to 5:00 PM.</p>
+        <a href="tel:+201122253729" style="color: var(--accent-blue); font-weight: 600; font-size: 15px;">+20 112 225 3729</a>
+      </div>
+
+      <div class="glass-card" style="padding: 24px; border-radius: var(--border-radius-md);">
+        <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent-blue); flex-shrink: 0;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <h3 style="font-size: 18px; margin: 0;">FAQs</h3>
+        </div>
+        <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 12px;">Find immediate answers to setup, shipping, and security queries.</p>
+        <a href="/pages/faq" style="color: var(--accent-blue); font-weight: 600; font-size: 15px;">Visit Help Center &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Right Column: Support contact form -->
+    <div class="glass-card" style="padding: 40px; border-radius: var(--border-radius-lg);">
+      <h2 style="font-size: 28px; margin-bottom: 12px; color: var(--text-white);">Submit a Support Ticket</h2>
+      <p style="color: var(--text-gray); margin-bottom: 32px; font-size: 15px;">Please fill out the form below. A member of our support team will review your query and respond within 24 hours.</p>
+      
+      {% form 'contact', id: 'support-ticket-form' %}
+        {% if form.posted_successfully? %}
+          <p class="form-success-msg" style="color: #10b981; margin-bottom: 24px; font-weight: 600; font-size: 16px;">Ticket submitted successfully! We will get back to you shortly.</p>
+        {% endif %}
+        
+        {{ form.errors | default_errors }}
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label for="support-name" style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-gray);">Your Name *</label>
+              <input type="text" id="support-name" name="contact[name]" class="form-control" placeholder="Full Name" required style="width: 100%; background: rgba(255,255,255,0.03); border: var(--glass-border); border-radius: var(--border-radius-sm); padding: 12px 16px; color: var(--text-white);">
+            </div>
+            
+            <div class="form-group">
+              <label for="support-email" style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-gray);">Email Address *</label>
+              <input type="email" id="support-email" name="contact[email]" class="form-control" placeholder="name@domain.com" required style="width: 100%; background: rgba(255,255,255,0.03); border: var(--glass-border); border-radius: var(--border-radius-sm); padding: 12px 16px; color: var(--text-white);">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label for="support-phone" style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-gray);">Phone Number (optional)</label>
+              <input type="tel" id="support-phone" name="contact[phone]" class="form-control" placeholder="+20 1..." style="width: 100%; background: rgba(255,255,255,0.03); border: var(--glass-border); border-radius: var(--border-radius-sm); padding: 12px 16px; color: var(--text-white);">
+            </div>
+            
+            <div class="form-group">
+              <label for="support-issue-type" style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-gray);">Topic *</label>
+              <select id="support-issue-type" name="contact[issue_type]" required style="width: 100%; background: #131722; border: var(--glass-border); border-radius: var(--border-radius-sm); padding: 12px 16px; color: var(--text-white);">
+                <option value="" disabled selected>Select an option</option>
+                <option value="card-order">Order & Shipping Status</option>
+                <option value="profile-setup">Profile Setup & Customization</option>
+                <option value="nfc-compatibility">NFC Card Compatibility</option>
+                <option value="bulk-corporate">Bulk / Corporate Cards</option>
+                <option value="other">Other Inquiry</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="support-subject" style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-gray);">Subject *</label>
+            <input type="text" id="support-subject" name="contact[subject]" class="form-control" placeholder="Brief subject" required style="width: 100%; background: rgba(255,255,255,0.03); border: var(--glass-border); border-radius: var(--border-radius-sm); padding: 12px 16px; color: var(--text-white);">
+          </div>
+
+          <div class="form-group">
+            <label for="support-message" style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-gray);">Describe your problem *</label>
+            <textarea id="support-message" name="contact[body]" rows="5" class="form-control" placeholder="Please provide details of your issue..." required style="width: 100%; background: rgba(255,255,255,0.03); border: var(--glass-border); border-radius: var(--border-radius-sm); padding: 12px 16px; color: var(--text-white); font-family: var(--font-body); resize: vertical;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 16px; margin-top: 10px;">Submit Ticket</button>
+        </div>
+      {% endform %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Support Section",
+  "settings": []
+}
+{% endschema %}

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCharacterCounters();
   initCartDrawer();
   initHeaderScroll();
+  initHeroParallax();
 });
 
 // Hide/Show Header on Scroll
@@ -31,6 +32,76 @@ function initHeaderScroll() {
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }, { passive: true });
   }
+}
+
+// Hero Parallax Scroll Effect for side info cards and background watermark
+function initHeroParallax() {
+  const leftCard = document.querySelector('.hero-info-left');
+  const rightCard = document.querySelector('.hero-info-right');
+  const watermark = document.querySelector('.hero-watermark-text');
+  const watermarkContainer = document.querySelector('.hero-watermark');
+  
+  if (!leftCard && !rightCard && !watermark) return;
+
+  let ticked = false;
+  let watermarkTop = 0;
+
+  const measurePositions = () => {
+    if (watermarkContainer) {
+      const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+      const rect = watermarkContainer.getBoundingClientRect();
+      watermarkTop = rect.top + scrolled;
+    }
+  };
+
+  const updateParallax = () => {
+    const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (window.innerWidth > 768) {
+      // Calculate scroll multiplier for moving down, capping it so they scroll out of view naturally
+      const leftY = Math.min(scrolled * 0.4, 150);  // Cap at 150px
+      const rightY = Math.min(scrolled * 0.5, 180); // Cap at 180px
+      
+      if (leftCard) leftCard.style.setProperty('--scroll-y', `${leftY}px`);
+      if (rightCard) rightCard.style.setProperty('--scroll-y', `${rightY}px`);
+      
+      if (watermark) {
+        // Start parallax only when the watermark reaches the middle of the viewport
+        const threshold = watermarkTop - window.innerHeight * 0.5;
+        
+        let watermarkY = 0;
+        if (scrolled > threshold) {
+          watermarkY = (scrolled - threshold) * 0.45; // Sinks down smoothly once past threshold
+        }
+        watermark.style.setProperty('--scroll-y', `${watermarkY}px`);
+      }
+    } else {
+      // Clear parallax scroll offset on mobile devices where layout is stacked
+      if (leftCard) leftCard.style.setProperty('--scroll-y', '0px');
+      if (rightCard) rightCard.style.setProperty('--scroll-y', '0px');
+      if (watermark) watermark.style.setProperty('--scroll-y', '0px');
+    }
+    ticked = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticked) {
+      window.requestAnimationFrame(updateParallax);
+      ticked = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    measurePositions();
+    if (!ticked) {
+      window.requestAnimationFrame(updateParallax);
+      ticked = true;
+    }
+  }, { passive: true });
+
+  // Initial call
+  measurePositions();
+  updateParallax();
 }
 
 // Cart Drawer Slide Open/Close
@@ -161,22 +232,56 @@ function initQuantityPickers() {
     const incBtn = picker.querySelector('.inc-btn');
     const input = picker.querySelector('.quantity-input');
     
+    function updatePrice() {
+      const priceElement = document.querySelector('.product-price');
+      if (priceElement && input) {
+        if (!priceElement.hasAttribute('data-base-price')) {
+          const text = priceElement.textContent.trim();
+          const numMatch = text.match(/[\d,]+(\.\d+)?/);
+          if (numMatch) {
+            const basePrice = parseFloat(numMatch[0].replace(/,/g, ''));
+            priceElement.setAttribute('data-base-price', basePrice);
+            priceElement.setAttribute('data-currency', text.replace(numMatch[0], '').trim());
+          }
+        }
+        
+        const basePrice = parseFloat(priceElement.getAttribute('data-base-price'));
+        const currency = priceElement.getAttribute('data-currency') || '';
+        const quantity = parseInt(input.value) || 1;
+        
+        if (!isNaN(basePrice)) {
+          const total = basePrice * quantity;
+          const formattedTotal = total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+          priceElement.textContent = currency ? `${currency} ${formattedTotal}` : formattedTotal;
+        }
+      }
+    }
+    
     if (decBtn && incBtn && input) {
       decBtn.addEventListener('click', () => {
         let val = parseInt(input.value) || 1;
         if (val > 1) {
           input.value = val - 1;
+          updatePrice();
         }
       });
       
       incBtn.addEventListener('click', () => {
         let val = parseInt(input.value) || 1;
         input.value = val + 1;
+        updatePrice();
+      });
+      
+      input.addEventListener('input', () => {
+        let val = parseInt(input.value) || 1;
+        if (val < 1) input.value = 1;
+        updatePrice();
       });
       
       input.addEventListener('change', () => {
         let val = parseInt(input.value) || 1;
         if (val < 1) input.value = 1;
+        updatePrice();
       });
     }
   });

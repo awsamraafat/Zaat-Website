@@ -9,11 +9,19 @@
     <div class="product-image-container">
       {% if product.featured_image %}
         <img 
-          src="{{ product.featured_image | img_url: '600x600', crop: 'center' }}" 
+          src="{{ product.featured_image | img_url: '600x' }}" 
           alt="{{ product.featured_image.alt | escape }}" 
-          class="product-card-img"
+          class="product-card-img main-img"
           loading="lazy"
         >
+        {% if product.images.size > 1 %}
+          <img 
+            src="{{ product.images[1] | img_url: '600x' }}" 
+            alt="{{ product.images[1].alt | escape }}" 
+            class="product-card-img hover-img"
+            loading="lazy"
+          >
+        {% endif %}
       {% else %}
         {{ 'product-1' | placeholder_svg_tag: 'product-card-img placeholder' }}
       {% endif %}

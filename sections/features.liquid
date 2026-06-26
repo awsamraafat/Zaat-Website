@@ -66,7 +66,7 @@
       <!-- Radial Visual Ring -->
       <div class="radial-container">
         <div class="radial-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fff;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          <img src="{{ 'app-icon.png' | asset_url }}" alt="Zaat App" style="width: 56px; height: 56px; border-radius: 12px;">
         </div>
         <!-- Position radial links relative to center -->
         <div class="radial-item" style="top: 10%; left: 45%;">
@@ -138,19 +138,19 @@
       {% if section.settings.deck_card_2 != blank %}
         <img class="deck-card" src="{{ section.settings.deck_card_2 | img_url: '600x' }}" alt="NFC Card 2">
       {% else %}
-        <img class="deck-card" src="{{ 'card-chatgpt-1.png' | asset_url }}" alt="NFC Custom Design 1">
+        <img class="deck-card" src="{{ '12.png' | asset_url }}" alt="NFC Custom Design 1">
       {% endif %}
 
       {% if section.settings.deck_card_3 != blank %}
         <img class="deck-card" src="{{ section.settings.deck_card_3 | img_url: '600x' }}" alt="NFC Card 3">
       {% else %}
-        <img class="deck-card" src="{{ 'card-chatgpt-2.png' | asset_url }}" alt="NFC Custom Design 2">
+        <img class="deck-card" src="{{ 'card-pink-edition.png' | asset_url }}" alt="NFC Pink Edition">
       {% endif %}
 
       {% if section.settings.deck_card_4 != blank %}
         <img class="deck-card" src="{{ section.settings.deck_card_4 | img_url: '600x' }}" alt="NFC Pink Edition">
       {% else %}
-        <img class="deck-card" src="{{ 'card-pink-edition.png' | asset_url }}" alt="NFC Pink Edition">
+        <img class="deck-card" src="{{ '13.png' | asset_url }}" alt="NFC Pink Edition">
       {% endif %}
       
       <div class="circular-text-deck">

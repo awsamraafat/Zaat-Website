@@ -1,85 +1,617 @@
 <div class="faq-banner">
   <div class="container">
     <h1 style="font-size: 48px; margin-bottom: 16px;">Help Center</h1>
-    <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Use this space to promote the business, its products or its services. Help people become familiar with the business and its offerings.</p>
+    <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto; margin-bottom: 24px;">Got questions about Zaat? We have answers. Search below or browse categories.</p>
     
     <div class="faq-search-wrapper">
       <svg class="faq-search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-      <input type="text" class="faq-search-input" placeholder="Looking for something?">
+      <input type="text" class="faq-search-input" placeholder="Search the Help Center...">
     </div>
   </div>
 </div>
 
 <section class="container section-padding">
-  <div class="faq-tabs-nav">
-    <button type="button" class="faq-tab-btn active" data-category="general">General</button>
-    <button type="button" class="faq-tab-btn" data-category="setup">Setting up FAQs</button>
+  <!-- Welcome Area -->
+  <div style="max-width: 800px; margin: 0 auto 40px auto;">
+    <div class="glass-card" style="padding: 32px; border-radius: var(--border-radius-lg); text-align: center;">
+      <h2 style="font-size: 24px; color: var(--text-white); margin-bottom: 12px; font-family: var(--font-title);">Welcome to Zaat</h2>
+      <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 12px;">Zaat helps you share your professional identity instantly through smart NFC products, QR codes, and a customizable digital profile.</p>
+      <p style="color: var(--text-muted); line-height: 1.6; margin: 0; font-size: 14px;">Whether you're using a Zaat Card, Keychain, Sticker, or Stand, this Help Center will guide you through setup, customization, troubleshooting, and account management.</p>
+    </div>
+  </div>
+
+  <!-- Categories Nav -->
+  <div class="faq-tabs-nav" style="flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 40px;">
+    <button type="button" class="faq-tab-btn active" data-category="getting-started">Getting Started</button>
+    <button type="button" class="faq-tab-btn" data-category="nfc">NFC Products</button>
+    <button type="button" class="faq-tab-btn" data-category="qr">QR Codes</button>
+    <button type="button" class="faq-tab-btn" data-category="profile">Managing Profile</button>
+    <button type="button" class="faq-tab-btn" data-category="links">Links & Platforms</button>
+    <button type="button" class="faq-tab-btn" data-category="analytics">Analytics</button>
+    <button type="button" class="faq-tab-btn" data-category="network">Network & Contacts</button>
+    <button type="button" class="faq-tab-btn" data-category="security">Account & Security</button>
+    <button type="button" class="faq-tab-btn" data-category="orders">Orders & Shipping</button>
+    <button type="button" class="faq-tab-btn" data-category="business">Business Solutions</button>
+    <button type="button" class="faq-tab-btn" data-category="faqs">General FAQ</button>
   </div>
   
   <div class="faq-accordion-list">
-    <!-- General FAQ 1 -->
-    <div class="glass-card faq-accordion-item" data-category="general" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
+    <!-- Getting Started 1 -->
+    <div class="glass-card faq-accordion-item" data-category="getting-started" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
       <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What is an FAQ section?</h3>
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What is Zaat?</h3>
         <span class="accordion-icon">+</span>
       </div>
       <div class="faq-accordion-content accordion-content">
-        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">An FAQ section can be used to quickly answer common questions about your business like "Where do you ship to?", "What are your opening hours?", or "How can I book a service?".</p>
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Zaat is a smart networking platform that allows you to share your contact information, social media profiles, business details, payment links, and digital content through a single personalized profile.<br><br>
+          Your profile can be shared using:<br>
+          • NFC Products<br>
+          • QR Codes<br>
+          • Direct Profile Links<br><br>
+          Instead of carrying paper business cards, Zaat allows you to update your information anytime without reprinting anything.
+        </div>
       </div>
     </div>
     
-    <!-- General FAQ 2 -->
-    <div class="glass-card faq-accordion-item" data-category="general" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
+    <!-- Getting Started 2 -->
+    <div class="glass-card faq-accordion-item" data-category="getting-started" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
       <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Why do FAQs matter?</h3>
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Create My Profile?</h3>
         <span class="accordion-icon">+</span>
       </div>
       <div class="faq-accordion-content accordion-content">
-        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">FAQs are a great way to help site visitors find quick answers to common questions about your business and create a better navigation experience.</p>
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          1. Download the Zaat App.<br>
+          2. Create a new account.<br>
+          3. Verify your email address.<br>
+          4. Choose your unique username.<br>
+          5. Add your profile information.<br>
+          6. Upload your profile image.<br>
+          7. Add your social and professional links.<br><br>
+          Your profile becomes available immediately after setup.
+        </div>
       </div>
     </div>
     
-    <!-- General FAQ 3 -->
-    <div class="glass-card faq-accordion-item" data-category="general" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
+    <!-- Getting Started 3 -->
+    <div class="glass-card faq-accordion-item" data-category="getting-started" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
       <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Where can I add my FAQs?</h3>
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Is My Username?</h3>
         <span class="accordion-icon">+</span>
       </div>
       <div class="faq-accordion-content accordion-content">
-        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">You can add FAQs to any page on your site or to your mobile app, making them accessible to your users wherever they are.</p>
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Your username creates your public profile URL.<br><br>
+          Example:<br>
+          <strong>zaatlink.com/johnsmith</strong><br><br>
+          Choose a professional and memorable username because it becomes part of your public identity.
+        </div>
       </div>
     </div>
     
-    <!-- Setup FAQ 1 -->
-    <div class="glass-card faq-accordion-item" data-category="setup" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+    <!-- NFC 1 -->
+    <div class="glass-card faq-accordion-item" data-category="nfc" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
       <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How do I add a new question & answer?</h3>
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Is An NFC Product?</h3>
         <span class="accordion-icon">+</span>
       </div>
       <div class="faq-accordion-content accordion-content">
-        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">Go to your app dashboard, click on FAQs, and select "Add New". Type in your question and answer, then click save.</p>
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          NFC stands for Near Field Communication.<br><br>
+          Every Zaat product contains a smart NFC chip that allows people to access your profile simply by tapping their phone against the product.<br><br>
+          Available products include:<br>
+          • NFC Cards<br>
+          • Keychains<br>
+          • Stickers<br>
+          • Desk Stands<br><br>
+          No application is required for visitors.
+        </div>
       </div>
     </div>
     
-    <!-- Setup FAQ 2 -->
-    <div class="glass-card faq-accordion-item" data-category="setup" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+    <!-- NFC 2 -->
+    <div class="glass-card faq-accordion-item" data-category="nfc" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
       <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I insert an image, video, or GIF in my FAQ?</h3>
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Activate My Product?</h3>
         <span class="accordion-icon">+</span>
       </div>
       <div class="faq-accordion-content accordion-content">
-        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">Yes! You can enrich your FAQ answers by adding rich media assets directly in the editor.</p>
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          1. Open the Zaat App.<br>
+          2. Navigate to Product Activation.<br>
+          3. Tap Activate Product.<br>
+          4. Hold your phone near the NFC product.<br>
+          5. Follow the on-screen instructions.<br><br>
+          Once activation is complete, the product will automatically connect to your profile.
+        </div>
       </div>
     </div>
-    
-    <!-- Setup FAQ 3 -->
-    <div class="glass-card faq-accordion-item" data-category="setup" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+
+    <!-- NFC 3 -->
+    <div class="glass-card faq-accordion-item" data-category="nfc" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
       <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How do I edit or remove the 'Frequently Asked Questions' title?</h3>
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Change The Profile Linked To My Product?</h3>
         <span class="accordion-icon">+</span>
       </div>
       <div class="faq-accordion-content accordion-content">
-        <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">Go to your theme settings in the customizer, open the FAQ section settings, and edit the Title field.</p>
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          You can reconnect your product to another profile at any time from the Product Management section inside the app.
+        </div>
+      </div>
+    </div>
+
+    <!-- NFC 4 -->
+    <div class="glass-card faq-accordion-item" data-category="nfc" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">NFC Is Not Working</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          If your NFC product does not respond:<br>
+          • Ensure NFC is enabled on your phone.<br>
+          • Remove thick phone cases.<br>
+          • Hold the phone near the center of the NFC product.<br>
+          • Try another compatible device.<br>
+          • Update the Zaat App.<br><br>
+          If the issue continues, contact Support.
+        </div>
+      </div>
+    </div>
+
+    <!-- QR 1 -->
+    <div class="glass-card faq-accordion-item" data-category="qr" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Is My QR Code?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Your QR code is a scannable version of your profile link.<br><br>
+          Anyone can scan it using their phone camera and instantly access your profile.
+        </div>
+      </div>
+    </div>
+
+    <!-- QR 2 -->
+    <div class="glass-card faq-accordion-item" data-category="qr" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Customize My QR Code?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          Zaat allows you to customize:<br>
+          • Colors<br>
+          • Background<br>
+          • Layout<br>
+          • Branding Elements<br><br>
+          Changes are reflected immediately.
+        </div>
+      </div>
+    </div>
+
+    <!-- QR 3 -->
+    <div class="glass-card faq-accordion-item" data-category="qr" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Download My QR Code?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Open:<br>
+          <strong>Profile → Share → QR Code → Download</strong><br><br>
+          The QR code can then be used on:<br>
+          • Business Cards<br>
+          • Presentations<br>
+          • Email Signatures<br>
+          • Social Media Profiles<br>
+          • Marketing Materials
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile 1 -->
+    <div class="glass-card faq-accordion-item" data-category="profile" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Edit My Information?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Open the app and select Edit Profile.<br><br>
+          You can update:<br>
+          • Name<br>
+          • Job Title<br>
+          • Company<br>
+          • Bio<br>
+          • Location<br>
+          • Contact Information<br><br>
+          Changes are saved instantly.
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile 2 -->
+    <div class="glass-card faq-accordion-item" data-category="profile" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Hide My Email Or Phone Number?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          Inside Privacy Settings you can choose which information is visible to visitors.<br><br>
+          Only the information you approve will appear publicly.
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile 3 -->
+    <div class="glass-card faq-accordion-item" data-category="profile" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Change My Profile Appearance?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          You can customize:<br>
+          • Profile Theme<br>
+          • Layout Style<br>
+          • Profile Image<br>
+          • Banner Image<br>
+          • QR Design<br><br>
+          This allows every profile to match your personal or business brand.
+        </div>
+      </div>
+    </div>
+
+    <!-- Links 1 -->
+    <div class="glass-card faq-accordion-item" data-category="links" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Links Can I Add?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Zaat supports:<br>
+          • Instagram, LinkedIn, Facebook, TikTok, Snapchat<br>
+          • WhatsApp, Telegram, YouTube, X (Twitter)<br>
+          • Behance, Dribbble, Figma, Calendly<br>
+          • Custom Links<br><br>
+          And many more.
+        </div>
+      </div>
+    </div>
+
+    <!-- Links 2 -->
+    <div class="glass-card faq-accordion-item" data-category="links" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Rearrange My Links?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          Use the Link Manager to drag and reorder links according to your preference.
+        </div>
+      </div>
+    </div>
+
+    <!-- Links 3 -->
+    <div class="glass-card faq-accordion-item" data-category="links" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Disable A Link Without Deleting It?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          Simply switch the visibility toggle off.<br><br>
+          The link will be hidden from visitors while remaining saved in your account.
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics 1 -->
+    <div class="glass-card faq-accordion-item" data-category="analytics" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Analytics Does Zaat Provide?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Zaat provides real-time engagement insights including:<br>
+          • Profile Views<br>
+          • NFC Taps<br>
+          • QR Scans<br>
+          • Link Clicks<br>
+          • Follower Growth<br>
+          • Device Statistics
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics 2 -->
+    <div class="glass-card faq-accordion-item" data-category="analytics" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Why Are Analytics Important?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Analytics help you understand:<br>
+          • How often people interact with your profile<br>
+          • Which links perform best<br>
+          • Which sharing method generates more engagement
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics 3 -->
+    <div class="glass-card faq-accordion-item" data-category="analytics" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Why Don't I See Updated Analytics?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Analytics may take a short time to process.<br><br>
+          Ensure your internet connection is active and refresh the Analytics page.
+        </div>
+      </div>
+    </div>
+
+    <!-- Network 1 -->
+    <div class="glass-card faq-accordion-item" data-category="network" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Is The Network Feature?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Network allows you to collect and organize people you meet.<br><br>
+          Instead of losing contact information, you can save digital connections directly inside Zaat.
+        </div>
+      </div>
+    </div>
+
+    <!-- Network 2 -->
+    <div class="glass-card faq-accordion-item" data-category="network" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Create Groups?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          You can create custom groups such as:<br>
+          • Clients<br>
+          • Partners<br>
+          • Investors<br>
+          • Team Members<br>
+          • Leads<br><br>
+          This makes relationship management easier.
+        </div>
+      </div>
+    </div>
+
+    <!-- Security 1 -->
+    <div class="glass-card faq-accordion-item" data-category="security" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Can I Reset My Password?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          From the Sign In screen:<br><br>
+          <strong>Forgot Password → Enter Email → Follow Instructions</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Security 2 -->
+    <div class="glass-card faq-accordion-item" data-category="security" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Does Zaat Support OTP Login?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          You can securely sign in using one-time verification codes sent to your email.
+        </div>
+      </div>
+    </div>
+
+    <!-- Security 3 -->
+    <div class="glass-card faq-accordion-item" data-category="security" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Use Multiple Accounts?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          Zaat supports multi-account management, allowing you to switch between personal and business profiles.
+        </div>
+      </div>
+    </div>
+
+    <!-- Security 4 -->
+    <div class="glass-card faq-accordion-item" data-category="security" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Delete My Account?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Contact Support and submit an account deletion request.<br><br>
+          Account deletion may permanently remove profile data and associated information.
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders 1 -->
+    <div class="glass-card faq-accordion-item" data-category="orders" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Track My Order?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          After placing an order, you will receive tracking information by email.<br><br>
+          You can also contact Support for status updates.
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders 2 -->
+    <div class="glass-card faq-accordion-item" data-category="orders" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Do You Offer International Shipping?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Availability depends on the destination country.<br><br>
+          Please contact Support for the latest shipping information.
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders 3 -->
+    <div class="glass-card faq-accordion-item" data-category="orders" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Do Products Include A Warranty?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Manufacturing defects may be covered according to the applicable warranty policy.<br><br>
+          Contact Support for assistance.
+        </div>
+      </div>
+    </div>
+
+    <!-- Business 1 -->
+    <div class="glass-card faq-accordion-item" data-category="business" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Do You Offer Team Packages?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          Zaat provides solutions for:<br>
+          • Startups<br>
+          • Sales Teams<br>
+          • Agencies<br>
+          • Enterprises<br>
+          • Events & Conferences
+        </div>
+      </div>
+    </div>
+
+    <!-- Business 2 -->
+    <div class="glass-card faq-accordion-item" data-category="business" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can We Add Company Branding?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          Corporate packages may include:<br>
+          • Custom Logos<br>
+          • Custom Colors<br>
+          • Branded NFC Products<br>
+          • Team Management Features
+        </div>
+      </div>
+    </div>
+
+    <!-- General FAQs 1 -->
+    <div class="glass-card faq-accordion-item" data-category="faqs" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Do Visitors Need The App?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          No.<br><br>
+          Visitors only need a smartphone.
+        </div>
+      </div>
+    </div>
+
+    <!-- General FAQs 2 -->
+    <div class="glass-card faq-accordion-item" data-category="faqs" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Update My Profile After Purchasing A Card?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          All updates happen digitally and appear immediately.
+        </div>
+      </div>
+    </div>
+
+    <!-- General FAQs 3 -->
+    <div class="glass-card faq-accordion-item" data-category="faqs" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Happens If I Lose My NFC Product?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          You can disconnect the product from your account and activate a replacement.
+        </div>
+      </div>
+    </div>
+
+    <!-- General FAQs 4 -->
+    <div class="glass-card faq-accordion-item" data-category="faqs" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Does Zaat Work Worldwide?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Yes.<br><br>
+          Anyone with internet access can view your profile.
+        </div>
+      </div>
+    </div>
+
+    <!-- General FAQs 5 -->
+    <div class="glass-card faq-accordion-item" data-category="faqs" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+      <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+        <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Is My Data Secure?</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="faq-accordion-content accordion-content">
+        <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+          Zaat uses modern security standards and trusted cloud infrastructure to protect user information.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Still Need Help -->
+  <div style="max-width: 800px; margin: 56px auto 0 auto; text-align: center;">
+    <div class="glass-card" style="padding: 32px; border-radius: var(--border-radius-lg);">
+      <h3 style="font-size: 20px; color: var(--text-white); margin-bottom: 12px; font-family: var(--font-title);">Still Need Help?</h3>
+      <p style="color: var(--text-gray); margin-bottom: 16px;">If you cannot find the answer you're looking for, our support team is here to help.</p>
+      <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; color: var(--text-gray);">
+        <div>Email: <a href="mailto:info@zaatlink.com" style="color: var(--accent-blue); font-weight: 500;">info@zaatlink.com</a></div>
+        <div style="font-size: 13px; color: var(--text-muted);">Response Time: Within 24 Business Hours</div>
       </div>
     </div>
   </div>

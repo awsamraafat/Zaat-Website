@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zaat Link Theme Preview - Local Sandbox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/theme.css">
   
   <!-- Add a minor helper style for the preview toolbar -->
@@ -13,6 +16,8 @@
       color: #fff;
       padding: 10px 20px;
       display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       justify-content: space-between;
       align-items: center;
       border-bottom: 2px solid #3b82f6;
@@ -27,6 +32,7 @@
       font-size: 14px;
       letter-spacing: 0.05em;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 8px;
     }
@@ -36,9 +42,11 @@
       padding: 2px 6px;
       border-radius: 4px;
       text-transform: uppercase;
+      white-space: nowrap;
     }
     .preview-nav {
       display: flex;
+      flex-wrap: wrap;
       gap: 10px;
     }
     .preview-btn {
@@ -51,6 +59,7 @@
       font-size: 13px;
       font-weight: 600;
       transition: all 0.3s;
+      white-space: nowrap;
     }
     .preview-btn:hover, .preview-btn.active {
       background: #3b82f6;
@@ -78,6 +87,9 @@
       <button class="preview-btn" onclick="switchPage('product')">📱 Product Page</button>
       <button class="preview-btn" onclick="switchPage('faq')">❓ Help Center</button>
       <button class="preview-btn" onclick="switchPage('download')">📲 Download App</button>
+      <button class="preview-btn" onclick="switchPage('support')">🛠️ Support</button>
+      <button class="preview-btn" onclick="switchPage('privacy')">🔒 Privacy Policy</button>
+      <button class="preview-btn" onclick="switchPage('terms')">📜 Terms & Conditions</button>
     </div>
   </div>
 
@@ -86,7 +98,7 @@
     <div class="container header-container">
       <div class="logo">
         <a href="#" onclick="switchPage('home')" style="display: block;">
-          <img src="assets/logo.gif" alt="Zaat Logo" style="height: 80px; width: auto; display: block;">
+          <img src="assets/logo.gif" alt="Zaat Logo" class="header-logo-img">
         </a>
       </div>
 
@@ -125,105 +137,157 @@
   <!-- ==================== HOMEPAGE PAGE ==================== -->
   <div id="page-home" class="page-container active">
     <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-tagline">UPGRADE YOUR CONNECTION</div>
-          <h1 class="hero-title">Upgrade the way you connect with one smart card.</h1>
-          <p class="hero-description">Seamlessly share your profile, social media, and contact information using Zaat's NFC technology - all in one powerful card.</p>
-          <div style="display: flex; gap: 16px;">
-            <button class="btn btn-primary" onclick="switchPage('product')">Get Started</button>
-            <button class="btn btn-secondary" onclick="switchPage('collection')">Explore Collection</button>
-          </div>
-        </div>
-        
-        <div class="hero-image-wrapper">
-          <img src="assets/hero-bg-liquid.png" alt="Fluid Glossy render" class="hero-bg-blob">
-          
-          <div class="glass-card hero-card-floating hero-card-left" style="padding: 16px; border-radius: 16px; display: flex; gap: 12px; align-items: center;">
-            <div style="width: 48px; height: 48px; border-radius: 50%; overflow: hidden; background: #e2e8f0; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #1e293b;">ZA</div>
-            <div>
-              <div style="font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px;">Tap. Share. Connect.</div>
-              <div style="font-size: 11px; color: var(--text-gray);">Instantly exchange contacts</div>
-            </div>
-          </div>
+    <section class="hero-section-wix">
+      <!-- Centered Text -->
+      <div class="hero-text-center">
+        <h1 class="hero-title-wix">Upgrade the way you connect with<br><span class="hero-title-accent">one smart card.</span></h1>
+        <p class="hero-desc-wix">Seamlessly share your profile, social media, and contact information using Zaat's NFC technology - all in one powerful card.</p>
+      </div>
 
-          <div class="glass-card hero-card-floating hero-card-right" style="padding: 16px; border-radius: 16px; display: flex; gap: 12px; align-items: center;">
-            <div style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(59,130,246,0.1); border-radius: 50%; color: var(--accent-blue);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
-            </div>
-            <div>
-              <div style="font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px;">Smart Identity</div>
-              <div style="font-size: 11px; color: var(--text-gray);">Simplified for professionals</div>
-            </div>
+      <!-- Blob + Card + Floating Cards Container -->
+      <div class="hero-blob-wrapper">
+        <!-- Center Assets container for perfect alignment and sync'd floating -->
+        <div class="hero-center-assets">
+          <!-- Ambient Blue Glow behind the blob -->
+          <img src="assets/hero-bg-glow.png" alt="Blue ambient glow" class="hero-blob-glow">
+
+          <!-- Blue Blob Image -->
+          <img src="assets/hero-bg-liquid.png" alt="Blue glossy blob" class="hero-blob-img">
+
+          <!-- Black NFC Card floating on blob -->
+          <div class="hero-nfc-card">
+            <img src="assets/card-black-edition.png" alt="Zaat NFC Card">
           </div>
         </div>
+
+        <!-- Left Info Card -->
+        <div class="hero-info-card hero-info-left">
+          <div class="hero-info-photo">
+            <img src="assets/hero-woman.png" alt="Person smiling">
+          </div>
+          <div class="hero-info-body">
+            <h3>Tap. Share. Connect.</h3>
+            <p>Share everything about you instantly with your Zaat smart card.</p>
+            <button class="hero-info-btn" onclick="switchPage('product')">Get Started</button>
+          </div>
+        </div>
+
+        <!-- Right Info Card -->
+        <div class="hero-info-card hero-info-right">
+          <div class="hero-info-icon-container">
+            <img src="assets/hero-nfc-icon.png" alt="NFC icon" class="hero-nfc-icon-img">
+          </div>
+          <div class="hero-info-body">
+            <h3>Your digital identity, simplified</h3>
+            <p>Keep all your important links and contact details in one powerful profile.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zaatlink Watermark Section -->
+      <div class="hero-watermark">
+        <span class="hero-watermark-text">Zaatlink</span>
       </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features-section section-padding">
+    <section class="features-section section-padding" id="features-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">A Smarter Way to Share Your Identity</h2>
-          <p class="section-desc">Create your digital profile, add your contact details, and update them instantly. Networking has never been this simple, fast, and secure.</p>
-        </div>
         
-        <div class="features-grid" style="margin-bottom: 100px;">
-          <div class="features-col">
-            <div class="feature-item glass-card">
-              <div class="feature-icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <!-- Split Header: title left, description right -->
+        <div class="features-split-header">
+          <h2 class="features-split-title">A Smarter Way to Share<br>Your Identity</h2>
+          <p class="features-split-desc">Use the Zaat app to create your digital profile and share your information instantly with your smart card — simple, fast, and always up to date.</p>
+        </div>
+
+
+        <!-- Features Sides + Phone Layout -->
+        <div class="features-sides-layout">
+          <!-- Left Column -->
+          <div class="features-side features-side-left">
+            <div class="feature-item-modern">
+              <div class="feature-icon-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
               </div>
-              <div>
-                <h3 class="feature-item-title">Smart Profile</h3>
-                <p class="feature-item-desc">Create your digital profile and add your contact details, social media, and personal links easily through the Zaat app.</p>
-              </div>
+              <h3 class="feature-item-title-modern">Smart Profile</h3>
+              <p class="feature-item-desc-modern">Create your digital profile and add your contact details, social media, and personal links easily through the Zaat app.</p>
             </div>
-            
-            <div class="feature-item glass-card">
-              <div class="feature-icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+
+            <div class="feature-item-modern">
+              <div class="feature-icon-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
               </div>
-              <div>
-                <h3 class="feature-item-title">All-in-One Links</h3>
-                <p class="feature-item-desc">Keep your social platforms, websites, and contact details organized in one smart profile link.</p>
+              <h3 class="feature-item-title-modern">All-in-One Links</h3>
+              <p class="feature-item-desc-modern">Keep your social platforms, websites, and contact details organized in one smart profile link.</p>
+            </div>
+          </div>
+
+          <!-- Center: Card + Phone -->
+          <div class="features-side-center">
+            <div class="card-phone-zone" id="card-phone-zone">
+              <div class="scroll-card" id="scroll-card">
+                <img src="assets/card-black-edition.png" alt="Zaat NFC Card" class="scroll-card-img">
+              </div>
+              
+              <div class="iphone-frame" id="iphone-frame">
+                <div class="iphone-btn-silent"></div>
+                <div class="iphone-btn-volup"></div>
+                <div class="iphone-btn-voldown"></div>
+                <div class="iphone-btn-power"></div>
+                
+                <div class="iphone-screen">
+                  <div class="iphone-island"></div>
+                  <div class="iphone-status-bar">
+                    <span class="status-time">9:41</span>
+                    <div class="status-icons">
+                      <svg width="16" height="12" viewBox="0 0 16 12" fill="#1e293b"><rect x="0" y="3" width="3" height="9" rx="0.5"/><rect x="4.5" y="2" width="3" height="10" rx="0.5"/><rect x="9" y="0" width="3" height="12" rx="0.5"/><rect x="13.5" y="1" width="2.5" height="11" rx="0.5" fill-opacity="0.3"/></svg>
+                      <svg width="15" height="11" viewBox="0 0 15 11" fill="#1e293b"><path d="M7.5 3.5C9.4 3.5 11.1 4.3 12.3 5.5L13.7 4.1C12.1 2.5 9.9 1.5 7.5 1.5S2.9 2.5 1.3 4.1L2.7 5.5C3.9 4.3 5.6 3.5 7.5 3.5zM7.5 6.5C8.6 6.5 9.6 7 10.3 7.7L11.7 6.3C10.6 5.2 9.1 4.5 7.5 4.5S4.4 5.2 3.3 6.3L4.7 7.7C5.4 7 6.4 6.5 7.5 6.5zM7.5 9.5C6.9 9.5 6.4 9.7 6 10.1L7.5 11.5L9 10.1C8.6 9.7 8.1 9.5 7.5 9.5z"/></svg>
+                      <div class="status-battery"><div class="battery-fill"></div></div>
+                    </div>
+                  </div>
+                  <div class="iphone-content">
+                    <p class="iphone-app-label">zaatlink.com</p>
+                  </div>
+                  <a href="#" onclick="switchPage('download')" class="phone-download-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                    Download the App
+                  </a>
+                  <div class="iphone-home-bar"></div>
+                </div>
               </div>
             </div>
           </div>
-          
-          <div class="features-center-phone">
-            <img src="assets/phone-mockup.png" alt="Zaat App Mockup" class="phone-img">
-          </div>
-          
-          <div class="features-col">
-            <div class="feature-item glass-card">
-              <div class="feature-icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 6H3a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"></path><path d="M23 9l-4 3 4 3V9z"></path></svg>
+
+          <!-- Right Column -->
+          <div class="features-side features-side-right">
+            <div class="feature-item-modern">
+              <div class="feature-icon-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 18C13.5 16.5 15.5 15.5 18 15.5" stroke-linecap="round"/><path d="M10 20C12.5 18.5 15 18 18 18.5" stroke-linecap="round"/><path d="M14 16C16 14.5 19 13.5 23 14" stroke-linecap="round"/><circle cx="6" cy="18" r="2" fill="currentColor"/></svg>
               </div>
-              <div>
-                <h3 class="feature-item-title">Tap to Share</h3>
-                <p class="feature-item-desc">Tap your Zaat card on a smartphone to instantly share your profile, contact info, and social links using NFC technology.</p>
-              </div>
+              <h3 class="feature-item-title-modern">Tap to Share</h3>
+              <p class="feature-item-desc-modern">Tap your Zaat card on a smartphone to instantly share your profile, contact info, and social links using NFC technology.</p>
             </div>
-            
-            <div class="feature-item glass-card">
-              <div class="feature-icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+
+            <div class="feature-item-modern">
+              <div class="feature-icon-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
               </div>
-              <div>
-                <h3 class="feature-item-title">Live Updates</h3>
-                <p class="feature-item-desc">Update your information anytime from the app and your card will always share the latest version instantly.</p>
-              </div>
+              <h3 class="feature-item-title-modern">Live Updates</h3>
+              <p class="feature-item-desc-modern">Update your information anytime from the app and your card will always share the latest version instantly.</p>
             </div>
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <section class="features-section section-padding" style="background: var(--bg-dark);">
+      <div class="container">
         <!-- How to Get Started Section -->
         <div class="radial-get-started" style="margin-bottom: 100px;">
           <div class="radial-container">
             <div class="radial-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fff;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              <img src="assets/app-icon.png" alt="Zaat App" style="width: 56px; height: 56px; border-radius: 12px;">
             </div>
             <div class="radial-item" style="top: 10%; left: 45%;">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
@@ -281,9 +345,9 @@
         <!-- Floating Diagonal Deck -->
         <div class="floating-deck-container">
           <img class="deck-card" src="assets/card-black-edition.png" alt="NFC Black Edition">
-          <img class="deck-card" src="assets/card-chatgpt-1.png" alt="NFC Custom Design 1">
-          <img class="deck-card" src="assets/card-chatgpt-2.png" alt="NFC Custom Design 2">
+          <img class="deck-card" src="assets/12.png" alt="NFC Custom Design 1">
           <img class="deck-card" src="assets/card-pink-edition.png" alt="NFC Pink Edition">
+          <img class="deck-card" src="assets/13.png" alt="NFC Pink Edition">
           
           <div class="circular-text-deck">
             <h3 style="font-size:20px; margin-bottom:8px;">Choose Your Style.</h3>
@@ -381,7 +445,8 @@
             <div class="product-card glass-card">
               <a href="#" class="product-card-link" onclick="switchPage('product')">
                 <div class="product-image-container">
-                  <img src="assets/card-black-edition.png" alt="Zaat NFC Card" class="product-card-img">
+                  <img src="assets/card-black-edition.png" alt="Zaat NFC Card" class="product-card-img main-img">
+                  <img src="assets/card-chatgpt-1.png" alt="Zaat NFC Card Hover" class="product-card-img hover-img">
                 </div>
                 <h3 class="product-card-title">Zaat NFC camouflage Card - Custom Embossed names</h3>
                 <div class="product-card-price">EGP 500.00</div>
@@ -533,85 +598,617 @@
     <div class="faq-banner">
       <div class="container">
         <h1 style="font-size: 48px; margin-bottom: 16px;">Help Center</h1>
-        <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Need assistance? Browse our categories below or type a query to search through the Frequently Asked Questions.</p>
+        <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto; margin-bottom: 24px;">Got questions about Zaat? We have answers. Search below or browse categories.</p>
         
         <div class="faq-search-wrapper">
           <svg class="faq-search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <input type="text" class="faq-search-input" placeholder="Looking for something?">
+          <input type="text" class="faq-search-input" placeholder="Search the Help Center...">
         </div>
       </div>
     </div>
 
     <section class="container section-padding">
-      <div class="faq-tabs-nav">
-        <button type="button" class="faq-tab-btn active" data-category="general">General</button>
-        <button type="button" class="faq-tab-btn" data-category="setup">Setting up FAQs</button>
+      <!-- Welcome Area -->
+      <div style="max-width: 800px; margin: 0 auto 40px auto;">
+        <div class="glass-card" style="padding: 32px; border-radius: var(--border-radius-lg); text-align: center;">
+          <h2 style="font-size: 24px; color: var(--text-white); margin-bottom: 12px; font-family: var(--font-title);">Welcome to Zaat</h2>
+          <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 12px;">Zaat helps you share your professional identity instantly through smart NFC products, QR codes, and a customizable digital profile.</p>
+          <p style="color: var(--text-muted); line-height: 1.6; margin: 0; font-size: 14px;">Whether you're using a Zaat Card, Keychain, Sticker, or Stand, this Help Center will guide you through setup, customization, troubleshooting, and account management.</p>
+        </div>
+      </div>
+
+      <!-- Categories Nav -->
+      <div class="faq-tabs-nav" style="flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 40px;">
+        <button type="button" class="faq-tab-btn active" data-category="getting-started">Getting Started</button>
+        <button type="button" class="faq-tab-btn" data-category="nfc">NFC Products</button>
+        <button type="button" class="faq-tab-btn" data-category="qr">QR Codes</button>
+        <button type="button" class="faq-tab-btn" data-category="profile">Managing Profile</button>
+        <button type="button" class="faq-tab-btn" data-category="links">Links & Platforms</button>
+        <button type="button" class="faq-tab-btn" data-category="analytics">Analytics</button>
+        <button type="button" class="faq-tab-btn" data-category="network">Network & Contacts</button>
+        <button type="button" class="faq-tab-btn" data-category="security">Account & Security</button>
+        <button type="button" class="faq-tab-btn" data-category="orders">Orders & Shipping</button>
+        <button type="button" class="faq-tab-btn" data-category="business">Business Solutions</button>
+        <button type="button" class="faq-tab-btn" data-category="faqs">General FAQ</button>
       </div>
       
       <div class="faq-accordion-list">
-        <!-- Gen 1 -->
-        <div class="glass-card faq-accordion-item" data-category="general" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
+        <!-- Getting Started 1 -->
+        <div class="glass-card faq-accordion-item" data-category="getting-started" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
           <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What is an FAQ section?</h3>
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What is Zaat?</h3>
             <span class="accordion-icon">+</span>
           </div>
           <div class="faq-accordion-content accordion-content">
-            <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">An FAQ section can be used to quickly answer common questions about your business like "Where do you ship to?", "What are your opening hours?", or "How can I book a service?".</p>
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Zaat is a smart networking platform that allows you to share your contact information, social media profiles, business details, payment links, and digital content through a single personalized profile.<br><br>
+              Your profile can be shared using:<br>
+              • NFC Products<br>
+              • QR Codes<br>
+              • Direct Profile Links<br><br>
+              Instead of carrying paper business cards, Zaat allows you to update your information anytime without reprinting anything.
+            </div>
           </div>
         </div>
         
-        <!-- Gen 2 -->
-        <div class="glass-card faq-accordion-item" data-category="general" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
+        <!-- Getting Started 2 -->
+        <div class="glass-card faq-accordion-item" data-category="getting-started" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
           <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Why do FAQs matter?</h3>
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Create My Profile?</h3>
             <span class="accordion-icon">+</span>
           </div>
           <div class="faq-accordion-content accordion-content">
-            <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">FAQs are a great way to help site visitors find quick answers to common questions about your business and create a better navigation experience.</p>
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              1. Download the Zaat App.<br>
+              2. Create a new account.<br>
+              3. Verify your email address.<br>
+              4. Choose your unique username.<br>
+              5. Add your profile information.<br>
+              6. Upload your profile image.<br>
+              7. Add your social and professional links.<br><br>
+              Your profile becomes available immediately after setup.
+            </div>
           </div>
         </div>
         
-        <!-- Gen 3 -->
-        <div class="glass-card faq-accordion-item" data-category="general" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
+        <!-- Getting Started 3 -->
+        <div class="glass-card faq-accordion-item" data-category="getting-started" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px;">
           <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Where can I add my FAQs?</h3>
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Is My Username?</h3>
             <span class="accordion-icon">+</span>
           </div>
           <div class="faq-accordion-content accordion-content">
-            <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">You can add FAQs to any page on your site or to your mobile app, making them accessible to your users wherever they are.</p>
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Your username creates your public profile URL.<br><br>
+              Example:<br>
+              <strong>zaatlink.com/johnsmith</strong><br><br>
+              Choose a professional and memorable username because it becomes part of your public identity.
+            </div>
           </div>
         </div>
         
-        <!-- Setup 1 -->
-        <div class="glass-card faq-accordion-item" data-category="setup" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+        <!-- NFC 1 -->
+        <div class="glass-card faq-accordion-item" data-category="nfc" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
           <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How do I add a new question & answer?</h3>
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Is An NFC Product?</h3>
             <span class="accordion-icon">+</span>
           </div>
           <div class="faq-accordion-content accordion-content">
-            <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">Go to your app dashboard, click on FAQs, and select "Add New". Type in your question and answer, then click save.</p>
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              NFC stands for Near Field Communication.<br><br>
+              Every Zaat product contains a smart NFC chip that allows people to access your profile simply by tapping their phone against the product.<br><br>
+              Available products include:<br>
+              • NFC Cards<br>
+              • Keychains<br>
+              • Stickers<br>
+              • Desk Stands<br><br>
+              No application is required for visitors.
+            </div>
           </div>
         </div>
         
-        <!-- Setup 2 -->
-        <div class="glass-card faq-accordion-item" data-category="setup" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+        <!-- NFC 2 -->
+        <div class="glass-card faq-accordion-item" data-category="nfc" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
           <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I insert an image, video, or GIF in my FAQ?</h3>
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Activate My Product?</h3>
             <span class="accordion-icon">+</span>
           </div>
           <div class="faq-accordion-content accordion-content">
-            <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">Yes! You can enrich your FAQ answers by adding rich media assets directly in the editor.</p>
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              1. Open the Zaat App.<br>
+              2. Navigate to Product Activation.<br>
+              3. Tap Activate Product.<br>
+              4. Hold your phone near the NFC product.<br>
+              5. Follow the on-screen instructions.<br><br>
+              Once activation is complete, the product will automatically connect to your profile.
+            </div>
           </div>
         </div>
-        
-        <!-- Setup 3 -->
-        <div class="glass-card faq-accordion-item" data-category="setup" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+
+        <!-- NFC 3 -->
+        <div class="glass-card faq-accordion-item" data-category="nfc" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
           <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How do I edit or remove the 'Frequently Asked Questions' title?</h3>
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Change The Profile Linked To My Product?</h3>
             <span class="accordion-icon">+</span>
           </div>
           <div class="faq-accordion-content accordion-content">
-            <p class="faq-answer-text" style="margin-top: 16px; line-height: 1.6;">Go to your theme settings in the customizer, open the FAQ section settings, and edit the Title field.</p>
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              You can reconnect your product to another profile at any time from the Product Management section inside the app.
+            </div>
+          </div>
+        </div>
+
+        <!-- NFC 4 -->
+        <div class="glass-card faq-accordion-item" data-category="nfc" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">NFC Is Not Working</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              If your NFC product does not respond:<br>
+              • Ensure NFC is enabled on your phone.<br>
+              • Remove thick phone cases.<br>
+              • Hold the phone near the center of the NFC product.<br>
+              • Try another compatible device.<br>
+              • Update the Zaat App.<br><br>
+              If the issue continues, contact Support.
+            </div>
+          </div>
+        </div>
+
+        <!-- QR 1 -->
+        <div class="glass-card faq-accordion-item" data-category="qr" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Is My QR Code?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Your QR code is a scannable version of your profile link.<br><br>
+              Anyone can scan it using their phone camera and instantly access your profile.
+            </div>
+          </div>
+        </div>
+
+        <!-- QR 2 -->
+        <div class="glass-card faq-accordion-item" data-category="qr" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Customize My QR Code?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              Zaat allows you to customize:<br>
+              • Colors<br>
+              • Background<br>
+              • Layout<br>
+              • Branding Elements<br><br>
+              Changes are reflected immediately.
+            </div>
+          </div>
+        </div>
+
+        <!-- QR 3 -->
+        <div class="glass-card faq-accordion-item" data-category="qr" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Download My QR Code?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Open:<br>
+              <strong>Profile → Share → QR Code → Download</strong><br><br>
+              The QR code can then be used on:<br>
+              • Business Cards<br>
+              • Presentations<br>
+              • Email Signatures<br>
+              • Social Media Profiles<br>
+              • Marketing Materials
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile 1 -->
+        <div class="glass-card faq-accordion-item" data-category="profile" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Edit My Information?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Open the app and select Edit Profile.<br><br>
+              You can update:<br>
+              • Name<br>
+              • Job Title<br>
+              • Company<br>
+              • Bio<br>
+              • Location<br>
+              • Contact Information<br><br>
+              Changes are saved instantly.
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile 2 -->
+        <div class="glass-card faq-accordion-item" data-category="profile" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Hide My Email Or Phone Number?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              Inside Privacy Settings you can choose which information is visible to visitors.<br><br>
+              Only the information you approve will appear publicly.
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile 3 -->
+        <div class="glass-card faq-accordion-item" data-category="profile" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Change My Profile Appearance?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              You can customize:<br>
+              • Profile Theme<br>
+              • Layout Style<br>
+              • Profile Image<br>
+              • Banner Image<br>
+              • QR Design<br><br>
+              This allows every profile to match your personal or business brand.
+            </div>
+          </div>
+        </div>
+
+        <!-- Links 1 -->
+        <div class="glass-card faq-accordion-item" data-category="links" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Links Can I Add?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Zaat supports:<br>
+              • Instagram, LinkedIn, Facebook, TikTok, Snapchat<br>
+              • WhatsApp, Telegram, YouTube, X (Twitter)<br>
+              • Behance, Dribbble, Figma, Calendly<br>
+              • Custom Links<br><br>
+              And many more.
+            </div>
+          </div>
+        </div>
+
+        <!-- Links 2 -->
+        <div class="glass-card faq-accordion-item" data-category="links" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Rearrange My Links?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              Use the Link Manager to drag and reorder links according to your preference.
+            </div>
+          </div>
+        </div>
+
+        <!-- Links 3 -->
+        <div class="glass-card faq-accordion-item" data-category="links" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Disable A Link Without Deleting It?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              Simply switch the visibility toggle off.<br><br>
+              The link will be hidden from visitors while remaining saved in your account.
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics 1 -->
+        <div class="glass-card faq-accordion-item" data-category="analytics" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Analytics Does Zaat Provide?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Zaat provides real-time engagement insights including:<br>
+              • Profile Views<br>
+              • NFC Taps<br>
+              • QR Scans<br>
+              • Link Clicks<br>
+              • Follower Growth<br>
+              • Device Statistics
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics 2 -->
+        <div class="glass-card faq-accordion-item" data-category="analytics" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Why Are Analytics Important?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Analytics help you understand:<br>
+              • How often people interact with your profile<br>
+              • Which links perform best<br>
+              • Which sharing method generates more engagement
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics 3 -->
+        <div class="glass-card faq-accordion-item" data-category="analytics" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Why Don't I See Updated Analytics?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Analytics may take a short time to process.<br><br>
+              Ensure your internet connection is active and refresh the Analytics page.
+            </div>
+          </div>
+        </div>
+
+        <!-- Network 1 -->
+        <div class="glass-card faq-accordion-item" data-category="network" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Is The Network Feature?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Network allows you to collect and organize people you meet.<br><br>
+              Instead of losing contact information, you can save digital connections directly inside Zaat.
+            </div>
+          </div>
+        </div>
+
+        <!-- Network 2 -->
+        <div class="glass-card faq-accordion-item" data-category="network" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Create Groups?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              You can create custom groups such as:<br>
+              • Clients<br>
+              • Partners<br>
+              • Investors<br>
+              • Team Members<br>
+              • Leads<br><br>
+              This makes relationship management easier.
+            </div>
+          </div>
+        </div>
+
+        <!-- Security 1 -->
+        <div class="glass-card faq-accordion-item" data-category="security" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Can I Reset My Password?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              From the Sign In screen:<br><br>
+              <strong>Forgot Password → Enter Email → Follow Instructions</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security 2 -->
+        <div class="glass-card faq-accordion-item" data-category="security" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Does Zaat Support OTP Login?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              You can securely sign in using one-time verification codes sent to your email.
+            </div>
+          </div>
+        </div>
+
+        <!-- Security 3 -->
+        <div class="glass-card faq-accordion-item" data-category="security" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Use Multiple Accounts?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              Zaat supports multi-account management, allowing you to switch between personal and business profiles.
+            </div>
+          </div>
+        </div>
+
+        <!-- Security 4 -->
+        <div class="glass-card faq-accordion-item" data-category="security" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Delete My Account?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Contact Support and submit an account deletion request.<br><br>
+              Account deletion may permanently remove profile data and associated information.
+            </div>
+          </div>
+        </div>
+
+        <!-- Orders 1 -->
+        <div class="glass-card faq-accordion-item" data-category="orders" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">How Do I Track My Order?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              After placing an order, you will receive tracking information by email.<br><br>
+              You can also contact Support for status updates.
+            </div>
+          </div>
+        </div>
+
+        <!-- Orders 2 -->
+        <div class="glass-card faq-accordion-item" data-category="orders" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Do You Offer International Shipping?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Availability depends on the destination country.<br><br>
+              Please contact Support for the latest shipping information.
+            </div>
+          </div>
+        </div>
+
+        <!-- Orders 3 -->
+        <div class="glass-card faq-accordion-item" data-category="orders" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Do Products Include A Warranty?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Manufacturing defects may be covered according to the applicable warranty policy.<br><br>
+              Contact Support for assistance.
+            </div>
+          </div>
+        </div>
+
+        <!-- Business 1 -->
+        <div class="glass-card faq-accordion-item" data-category="business" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Do You Offer Team Packages?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              Zaat provides solutions for:<br>
+              • Startups<br>
+              • Sales Teams<br>
+              • Agencies<br>
+              • Enterprises<br>
+              • Events & Conferences
+            </div>
+          </div>
+        </div>
+
+        <!-- Business 2 -->
+        <div class="glass-card faq-accordion-item" data-category="business" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can We Add Company Branding?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              Corporate packages may include:<br>
+              • Custom Logos<br>
+              • Custom Colors<br>
+              • Branded NFC Products<br>
+              • Team Management Features
+            </div>
+          </div>
+        </div>
+
+        <!-- General FAQs 1 -->
+        <div class="glass-card faq-accordion-item" data-category="faqs" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Do Visitors Need The App?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              No.<br><br>
+              Visitors only need a smartphone.
+            </div>
+          </div>
+        </div>
+
+        <!-- General FAQs 2 -->
+        <div class="glass-card faq-accordion-item" data-category="faqs" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Can I Update My Profile After Purchasing A Card?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              All updates happen digitally and appear immediately.
+            </div>
+          </div>
+        </div>
+
+        <!-- General FAQs 3 -->
+        <div class="glass-card faq-accordion-item" data-category="faqs" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">What Happens If I Lose My NFC Product?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              You can disconnect the product from your account and activate a replacement.
+            </div>
+          </div>
+        </div>
+
+        <!-- General FAQs 4 -->
+        <div class="glass-card faq-accordion-item" data-category="faqs" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Does Zaat Work Worldwide?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Yes.<br><br>
+              Anyone with internet access can view your profile.
+            </div>
+          </div>
+        </div>
+
+        <!-- General FAQs 5 -->
+        <div class="glass-card faq-accordion-item" data-category="faqs" style="padding: 24px; border-radius: var(--border-radius-md); margin-bottom: 16px; display: none;">
+          <div class="faq-accordion-header accordion-header" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <h3 class="faq-question-text" style="font-size: 16px; font-weight: 600;">Is My Data Secure?</h3>
+            <span class="accordion-icon">+</span>
+          </div>
+          <div class="faq-accordion-content accordion-content">
+            <div class="faq-answer-text" style="margin-top: 16px; line-height: 1.6; color: var(--text-gray);">
+              Zaat uses modern security standards and trusted cloud infrastructure to protect user information.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Still Need Help -->
+      <div style="max-width: 800px; margin: 56px auto 0 auto; text-align: center;">
+        <div class="glass-card" style="padding: 32px; border-radius: var(--border-radius-lg);">
+          <h3 style="font-size: 20px; color: var(--text-white); margin-bottom: 12px; font-family: var(--font-title);">Still Need Help?</h3>
+          <p style="color: var(--text-gray); margin-bottom: 16px;">If you cannot find the answer you're looking for, our support team is here to help.</p>
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; color: var(--text-gray);">
+            <div>Email: <a href="mailto:info@zaatlink.com" style="color: var(--accent-blue); font-weight: 500;">info@zaatlink.com</a></div>
+            <div style="font-size: 13px; color: var(--text-muted);">Response Time: Within 24 Business Hours</div>
           </div>
         </div>
       </div>
@@ -627,11 +1224,8 @@
         <div style="display: flex; gap: 48px; align-items: center; flex-wrap: wrap;">
           <!-- Left: App Icon Container -->
           <div style="flex: 1 1 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #c7d2fe; border-radius: 20px; padding: 40px 20px; box-shadow: inset 0 2px 4px rgba(255,255,255,0.4);">
-            <div style="background: #ffffff; width: 110px; height: 110px; border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-              </svg>
+            <div style="background: #ffffff; width: 110px; height: 110px; border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25); overflow: hidden;">
+              <img src="assets/Icon-App-29x29@3x.png" alt="Zaat App Icon" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="font-family: var(--font-title); font-size: 20px; font-weight: 800; color: #1e3a8a; margin-top: 16px;">Zaat App</div>
           </div>
@@ -644,30 +1238,14 @@
         </div>
         
         <!-- Badges Row -->
-        <div style="border-top: 1.5px solid #e2e8f0; padding-top: 32px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <div style="border-top: 1.5px solid #e2e8f0; padding-top: 32px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
           <!-- App Store Badge -->
-          <a href="#" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            <svg width="150" height="50" viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg">
-              <rect width="135" height="40" rx="6" fill="black" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
-              <path d="M20.5 15.8c0-2.4 2-3.6 2.1-3.7-1.1-1.6-2.8-1.9-3.4-1.9-1.5-.1-2.9 1-3.7 1-.7 0-1.9-.9-3.1-.9-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.5.8 1.1 1.7 2.4 2.9 2.4 1.2 0 1.6-.7 3.1-.7s1.8.7 3.1.7c1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-.9-2.5-3.8z" fill="white"/>
-              <path d="M18.0 9.2c.7-.8 1.1-1.9 1-3-.9.1-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.9.9.1 1.9-.5 2.7-1.3z" fill="white"/>
-              <text x="35" y="15" fill="white" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="6" font-weight="600" letter-spacing="0.2">Download on the</text>
-              <text x="35" y="27" fill="white" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700">App Store</text>
-            </svg>
+          <a href="#">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" style="height: 48px; border-radius: 8px;">
           </a>
           <!-- Google Play Badge -->
-          <a href="#" style="transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-            <svg width="150" height="50" viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg">
-              <rect width="135" height="40" rx="6" fill="black" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
-              <g transform="translate(10, 8) scale(0.9)">
-                <path d="M1.5 1.1C1.2.9 1 .9.7 1.1L12.5 12.9l2.7-2.7L1.5 1.1z" fill="#EA4335"/>
-                <path d="M12.5 12.9L.7 24.7c.3.2.5.2.8 0l13.7-9.1-2.7-2.7z" fill="#34A853"/>
-                <path d="M21.5 11L15.2 7.2l-2.7 5.7 2.7 2.7 6.3-4.2c.5-.3.5-1.1 0-1.4z" fill="#FBBC05"/>
-                <path d="M1.5 1.1v23.6c0 .6.4.8.8.6l12.9-12.4L1.5 1.1z" fill="#4285F4"/>
-              </g>
-              <text x="35" y="15" fill="white" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="5.5" font-weight="600" letter-spacing="0.5">GET IT ON</text>
-              <text x="35" y="27" fill="white" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700">Google Play</text>
-            </svg>
+          <a href="#">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 48px; border-radius: 8px;">
           </a>
         </div>
         
@@ -676,13 +1254,437 @@
   </div>
 
 
+  <!-- ==================== SUPPORT PAGE ==================== -->
+  <div id="page-support" class="page-container">
+    <div class="faq-banner">
+      <div class="container">
+        <h1 style="font-size: 48px; margin-bottom: 16px;">Support Hub</h1>
+        <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Have questions about your Zaat card or need assistance with your digital profile? Our support team is here to help.</p>
+      </div>
+    </div>
+
+    <section class="container section-padding">
+      <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: start;">
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div class="glass-card" style="padding: 24px; border-radius: var(--border-radius-md);">
+            <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent-blue); flex-shrink: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <h3 style="font-size: 18px; margin: 0;">Email Us</h3>
+            </div>
+            <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 12px;">For general inquiries, account issues, or bulk custom order quotes.</p>
+            <a href="mailto:info@zaatlink.com" style="color: var(--accent-blue); font-weight: 600; font-size: 15px;">info@zaatlink.com</a>
+          </div>
+
+          <div class="glass-card" style="padding: 24px; border-radius: var(--border-radius-md);">
+            <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent-blue); flex-shrink: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <h3 style="font-size: 18px; margin: 0;">Phone Support</h3>
+            </div>
+            <p style="color: var(--text-gray); font-size: 14px; margin-bottom: 12px;">Call us Sunday to Thursday, from 9:00 AM to 5:00 PM.</p>
+            <a href="tel:+201122253729" style="color: var(--accent-blue); font-weight: 600; font-size: 15px;">+20 112 225 3729</a>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 40px; border-radius: var(--border-radius-lg); flex-grow: 1; width: 100%;">
+          <h2 style="font-size: 28px; margin-bottom: 12px; color: var(--text-white);">Submit a Support Ticket</h2>
+          <p style="color: var(--text-gray); margin-bottom: 32px; font-size: 15px;">Please fill out the form below. A member of our support team will respond within 24 hours.</p>
+          
+          <form onsubmit="event.preventDefault(); alert('Ticket submitted successfully in this preview!'); this.reset();">
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                  <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-gray);">Your Name *</label>
+                  <input type="text" class="form-control" placeholder="Full Name" required style="width: 100%; background: rgba(255,255,255,0.03); border: var(--glass-border); border-radius: var(--border-radius-sm); padding: 12px 16px; color: var(--text-white);">
+                </div>
+                <div class="form-group">
+                  <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-gray);">Email Address *</label>
+                  <input type="email" class="form-control" placeholder="name@domain.com" required style="width: 100%; background: rgba(255,255,255,0.03); border: var(--glass-border); border-radius: var(--border-radius-sm); padding: 12px 16px; color: var(--text-white);">
+                </div>
+              </div>
+              <div class="form-group">
+                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-gray);">Describe your problem *</label>
+                <textarea rows="5" class="form-control" placeholder="Please provide details of your issue..." required style="width: 100%; background: rgba(255,255,255,0.03); border: var(--glass-border); border-radius: var(--border-radius-sm); padding: 12px 16px; color: var(--text-white); font-family: var(--font-body); resize: vertical;"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 16px; margin-top: 10px;">Submit Ticket</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== PRIVACY POLICY PAGE ==================== -->
+  <div id="page-privacy" class="page-container">
+    <style>
+      .preview-privacy-nav-link {
+        color: var(--text-gray);
+        transition: color 0.2s;
+        text-decoration: none;
+      }
+      .preview-privacy-nav-link:hover {
+        color: var(--text-white);
+      }
+      .preview-privacy-nav-link.active-tab {
+        color: var(--accent-blue) !important;
+        font-weight: 600 !important;
+      }
+    </style>
+
+    <div class="faq-banner">
+      <div class="container">
+        <h1 style="font-size: 48px; margin-bottom: 16px;">Privacy Policy</h1>
+        <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Last Updated: June 2026</p>
+      </div>
+    </div>
+
+    <section class="container section-padding">
+      <div style="display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start;">
+        <aside style="position: sticky; top: 130px; display: flex; flex-direction: column; gap: 12px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Sections</h4>
+          <a href="#preview-privacy-welcome" class="preview-privacy-nav-link active-tab" data-target="preview-privacy-welcome" style="font-size: 15px; display: block; padding: 6px 0;">Welcome</a>
+          <a href="#preview-privacy-info-collect" class="preview-privacy-nav-link" data-target="preview-privacy-info-collect" style="font-size: 15px; display: block; padding: 6px 0;">1. Information We Collect</a>
+          <a href="#preview-privacy-info-use" class="preview-privacy-nav-link" data-target="preview-privacy-info-use" style="font-size: 15px; display: block; padding: 6px 0;">2. How We Use Your Information</a>
+          <a href="#preview-privacy-public-info" class="preview-privacy-nav-link" data-target="preview-privacy-public-info" style="font-size: 15px; display: block; padding: 6px 0;">3. Public Information</a>
+          <a href="#preview-privacy-analytics" class="preview-privacy-nav-link" data-target="preview-privacy-analytics" style="font-size: 15px; display: block; padding: 6px 0;">4. Analytics</a>
+          <a href="#preview-privacy-data-storage" class="preview-privacy-nav-link" data-target="preview-privacy-data-storage" style="font-size: 15px; display: block; padding: 6px 0;">5. Data Storage</a>
+          <a href="#preview-privacy-third-party" class="preview-privacy-nav-link" data-target="preview-privacy-third-party" style="font-size: 15px; display: block; padding: 6px 0;">6. Third-Party Services</a>
+          <a href="#preview-privacy-account-deletion" class="preview-privacy-nav-link" data-target="preview-privacy-account-deletion" style="font-size: 15px; display: block; padding: 6px 0;">7. Account Deletion</a>
+          <a href="#preview-privacy-children-privacy" class="preview-privacy-nav-link" data-target="preview-privacy-children-privacy" style="font-size: 15px; display: block; padding: 6px 0;">8. Children's Privacy</a>
+          <a href="#preview-privacy-policy-changes" class="preview-privacy-nav-link" data-target="preview-privacy-policy-changes" style="font-size: 15px; display: block; padding: 6px 0;">9. Changes to this Policy</a>
+          <a href="#preview-privacy-contact" class="preview-privacy-nav-link" data-target="preview-privacy-contact" style="font-size: 15px; display: block; padding: 6px 0;">10. Contact Us</a>
+        </aside>
+
+        <div class="glass-card" style="padding: 48px; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; line-height: 1.8;">
+          <div id="preview-privacy-welcome" class="preview-privacy-content-tab" style="display: block;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">Welcome to Zaat</h2>
+            <p style="color: var(--text-gray);">At Zaat, we are committed to protecting your privacy and ensuring transparency regarding how your information is collected, used, and protected.</p>
+          </div>
+
+          <div id="preview-privacy-info-collect" class="preview-privacy-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">1. Information We Collect</h2>
+            <p style="color: var(--text-gray); margin-bottom: 16px;">When you create a Zaat account, we may collect:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
+              <li>Full Name</li>
+              <li>Email Address</li>
+              <li>Phone Number</li>
+              <li>Profile Information</li>
+              <li>Social Media Links</li>
+              <li>Professional Information (Company, Job Title, Bio, Location)</li>
+              <li>Profile Images and Uploaded Content</li>
+            </ul>
+            <p style="color: var(--text-gray); margin-bottom: 16px;">When visitors interact with your profile, we may collect:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <li>Device Information</li>
+              <li>Browser Information</li>
+              <li>Operating System Type</li>
+              <li>Page Views</li>
+              <li>QR Scan Activity</li>
+              <li>NFC Tap Activity</li>
+              <li>Link Click Analytics</li>
+            </ul>
+          </div>
+
+          <div id="preview-privacy-info-use" class="preview-privacy-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">2. How We Use Your Information</h2>
+            <p style="color: var(--text-gray); margin-bottom: 16px;">We use collected information to:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <li>Create and manage your digital profile</li>
+              <li>Generate your public profile page</li>
+              <li>Enable NFC and QR sharing functionality</li>
+              <li>Improve application performance</li>
+              <li>Provide analytics and engagement insights</li>
+              <li>Respond to support requests</li>
+              <li>Prevent abuse, fraud, and unauthorized activity</li>
+            </ul>
+          </div>
+
+          <div id="preview-privacy-public-info" class="preview-privacy-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">3. Public Information</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">Information you choose to display publicly on your profile may be visible to anyone who accesses your profile link, scans your QR code, or taps your NFC product.</p>
+            <p style="color: var(--text-gray);">You control the visibility of your profile information through your account settings.</p>
+          </div>
+
+          <div id="preview-privacy-analytics" class="preview-privacy-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">4. Analytics</h2>
+            <p style="color: var(--text-gray); margin-bottom: 16px;">Zaat provides profile analytics including:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <li>Profile Views</li>
+              <li>QR Scans</li>
+              <li>NFC Taps</li>
+              <li>Link Clicks</li>
+              <li>Device Statistics</li>
+            </ul>
+            <p style="color: var(--text-gray); margin-top: 16px;">These analytics are used solely to help users understand profile engagement.</p>
+          </div>
+
+          <div id="preview-privacy-data-storage" class="preview-privacy-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">5. Data Storage</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">Your information is securely stored using trusted cloud infrastructure and industry-standard security practices.</p>
+            <p style="color: var(--text-gray);">While we take reasonable measures to protect your information, no online platform can guarantee absolute security.</p>
+          </div>
+
+          <div id="preview-privacy-third-party" class="preview-privacy-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">6. Third-Party Services</h2>
+            <p style="color: var(--text-gray); margin-bottom: 16px;">Zaat may utilize trusted third-party providers for:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <li>Authentication</li>
+              <li>Cloud Storage</li>
+              <li>Analytics Processing</li>
+              <li>Payment Processing</li>
+              <li>Customer Support</li>
+            </ul>
+            <p style="color: var(--text-gray); margin-top: 16px;">These providers process information only as necessary to provide their services.</p>
+          </div>
+
+          <div id="preview-privacy-account-deletion" class="preview-privacy-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">7. Account Deletion</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">Users may request deletion of their account and associated data by contacting Zaat Support.</p>
+            <p style="color: var(--text-gray);">Certain information may be retained when required by law or for legitimate business purposes.</p>
+          </div>
+
+          <div id="preview-privacy-children-privacy" class="preview-privacy-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">8. Children's Privacy</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">Zaat services are not intended for children under the age of 13.</p>
+            <p style="color: var(--text-gray);">We do not knowingly collect personal information from children.</p>
+          </div>
+
+          <div id="preview-privacy-policy-changes" class="preview-privacy-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">9. Changes to this Policy</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">We may update this Privacy Policy periodically.</p>
+            <p style="color: var(--text-gray);">Updates will be published on this page with a revised effective date.</p>
+          </div>
+
+          <div id="preview-privacy-contact" class="preview-privacy-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">10. Contact Us</h2>
+            <p style="color: var(--text-gray); margin-bottom: 16px;">For privacy-related questions, please contact:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+              <li>Email: <a href="mailto:info@zaatlink.com" style="color: var(--accent-blue);">info@zaatlink.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function() {
+        const navLinks = document.querySelectorAll('.preview-privacy-nav-link');
+        const contentTabs = document.querySelectorAll('.preview-privacy-content-tab');
+        
+        if (navLinks.length > 0 && contentTabs.length > 0) {
+          navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              const targetId = link.getAttribute('data-target');
+              
+              // Update active link styling
+              navLinks.forEach(l => l.classList.remove('active-tab'));
+              link.classList.add('active-tab');
+              
+              // Switch visible content tab
+              contentTabs.forEach(tab => {
+                tab.style.display = 'none';
+              });
+              const activeTab = document.getElementById(targetId);
+              if (activeTab) {
+                activeTab.style.display = 'block';
+              }
+            });
+          });
+        }
+      })();
+    </script>
+  </div>
+
+  <!-- ==================== TERMS & CONDITIONS PAGE ==================== -->
+  <div id="page-terms" class="page-container">
+    <style>
+      .preview-terms-nav-link {
+        color: var(--text-gray);
+        transition: color 0.2s;
+        text-decoration: none;
+      }
+      .preview-terms-nav-link:hover {
+        color: var(--text-white);
+      }
+      .preview-terms-nav-link.active-tab {
+        color: var(--accent-blue) !important;
+        font-weight: 600 !important;
+      }
+    </style>
+
+    <div class="faq-banner">
+      <div class="container">
+        <h1 style="font-size: 48px; margin-bottom: 16px;">Terms & Conditions</h1>
+        <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Last Updated: June 2026</p>
+      </div>
+    </div>
+
+    <section class="container section-padding">
+      <div style="display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start;">
+        <aside style="position: sticky; top: 130px; display: flex; flex-direction: column; gap: 12px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Sections</h4>
+          <a href="#preview-terms-welcome" class="preview-terms-nav-link active-tab" data-target="preview-terms-welcome" style="font-size: 15px; display: block; padding: 6px 0;">Welcome</a>
+          <a href="#preview-terms-acceptance" class="preview-terms-nav-link" data-target="preview-terms-acceptance" style="font-size: 15px; display: block; padding: 6px 0;">1. Acceptance of Terms</a>
+          <a href="#preview-terms-accounts" class="preview-terms-nav-link" data-target="preview-terms-accounts" style="font-size: 15px; display: block; padding: 6px 0;">2. User Accounts</a>
+          <a href="#preview-terms-profiles" class="preview-terms-nav-link" data-target="preview-terms-profiles" style="font-size: 15px; display: block; padding: 6px 0;">3. Digital Profiles</a>
+          <a href="#preview-terms-use" class="preview-terms-nav-link" data-target="preview-terms-use" style="font-size: 15px; display: block; padding: 6px 0;">4. Acceptable Use</a>
+          <a href="#preview-terms-nfc" class="preview-terms-nav-link" data-target="preview-terms-nfc" style="font-size: 15px; display: block; padding: 6px 0;">5. NFC Products & QR Codes</a>
+          <a href="#preview-terms-intellectual" class="preview-terms-nav-link" data-target="preview-terms-intellectual" style="font-size: 15px; display: block; padding: 6px 0;">6. Intellectual Property</a>
+          <a href="#preview-terms-availability" class="preview-terms-nav-link" data-target="preview-terms-availability" style="font-size: 15px; display: block; padding: 6px 0;">7. Service Availability</a>
+          <a href="#preview-terms-limitation" class="preview-terms-nav-link" data-target="preview-terms-limitation" style="font-size: 15px; display: block; padding: 6px 0;">8. Limitation of Liability</a>
+          <a href="#preview-terms-termination" class="preview-terms-nav-link" data-target="preview-terms-termination" style="font-size: 15px; display: block; padding: 6px 0;">9. Termination</a>
+          <a href="#preview-terms-changes" class="preview-terms-nav-link" data-target="preview-terms-changes" style="font-size: 15px; display: block; padding: 6px 0;">10. Changes to Terms</a>
+          <a href="#preview-terms-governing" class="preview-terms-nav-link" data-target="preview-terms-governing" style="font-size: 15px; display: block; padding: 6px 0;">11. Governing Law</a>
+          <a href="#preview-terms-contact" class="preview-terms-nav-link" data-target="preview-terms-contact" style="font-size: 15px; display: block; padding: 6px 0;">12. Contact</a>
+        </aside>
+
+        <div class="glass-card" style="padding: 48px; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; line-height: 1.8;">
+          <div id="preview-terms-welcome" class="preview-terms-content-tab" style="display: block;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">Welcome to Zaat</h2>
+            <p style="color: var(--text-gray);">By accessing or using our website, mobile application, NFC products, QR services, or digital profile platform, you agree to these Terms & Conditions.</p>
+          </div>
+
+          <div id="preview-terms-acceptance" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">1. Acceptance of Terms</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">By creating an account or using any Zaat service, you agree to comply with these Terms.</p>
+            <p style="color: var(--text-gray);">If you do not agree, you should discontinue use of the services.</p>
+          </div>
+
+          <div id="preview-terms-accounts" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">2. User Accounts</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">Users are responsible for:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <li>Maintaining account security</li>
+              <li>Protecting login credentials</li>
+              <li>Ensuring information provided is accurate</li>
+              <li>All activities performed under their account</li>
+            </ul>
+          </div>
+
+          <div id="preview-terms-profiles" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">3. Digital Profiles</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">Users may create public digital profiles containing personal, professional, and social information.</p>
+            <p style="color: var(--text-gray);">You are solely responsible for the content you publish.</p>
+          </div>
+
+          <div id="preview-terms-use" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">4. Acceptable Use</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">You may not use Zaat to:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
+              <li>Violate applicable laws</li>
+              <li>Impersonate another individual or organization</li>
+              <li>Distribute harmful, fraudulent, or misleading content</li>
+              <li>Upload malicious software</li>
+              <li>Abuse platform functionality</li>
+            </ul>
+            <p style="color: var(--text-gray);">Zaat reserves the right to suspend or terminate accounts that violate these rules.</p>
+          </div>
+
+          <div id="preview-terms-nfc" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">5. NFC Products & QR Codes</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">Zaat NFC products and QR codes are intended for networking and information-sharing purposes.</p>
+            <p style="color: var(--text-gray);">Users are responsible for ensuring profile information remains accurate and appropriate.</p>
+          </div>
+
+          <div id="preview-terms-intellectual" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">6. Intellectual Property</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">All Zaat trademarks, branding, software, designs, graphics, and platform content remain the property of Zaat.</p>
+            <p style="color: var(--text-gray);">Users may not copy, reproduce, or distribute platform assets without permission.</p>
+          </div>
+
+          <div id="preview-terms-availability" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">7. Service Availability</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">We strive to provide uninterrupted access to our services.</p>
+            <p style="color: var(--text-gray);">However, we do not guarantee continuous availability and may perform maintenance, updates, or improvements at any time.</p>
+          </div>
+
+          <div id="preview-terms-limitation" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">8. Limitation of Liability</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">To the maximum extent permitted by law, Zaat shall not be liable for:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <li>Indirect damages</li>
+              <li>Lost profits</li>
+              <li>Lost business opportunities</li>
+              <li>Data loss</li>
+              <li>Service interruptions</li>
+            </ul>
+          </div>
+
+          <div id="preview-terms-termination" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">9. Termination</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">We may suspend or terminate accounts that:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <li>Violate these Terms</li>
+              <li>Abuse the platform</li>
+              <li>Create security risks</li>
+              <li>Engage in fraudulent activity</li>
+            </ul>
+          </div>
+
+          <div id="preview-terms-changes" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">10. Changes to Terms</h2>
+            <p style="color: var(--text-gray); margin-bottom: 12px;">We may modify these Terms from time to time.</p>
+            <p style="color: var(--text-gray);">Continued use of Zaat after updates constitutes acceptance of the revised Terms.</p>
+          </div>
+
+          <div id="preview-terms-governing" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">11. Governing Law</h2>
+            <p style="color: var(--text-gray);">These Terms shall be governed by the applicable laws of the Arab Republic of Egypt.</p>
+          </div>
+
+          <div id="preview-terms-contact" class="preview-terms-content-tab" style="display: none;">
+            <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">12. Contact</h2>
+            <p style="color: var(--text-gray); margin-bottom: 16px;">For legal inquiries, please contact:</p>
+            <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+              <li>Email: <a href="mailto:info@zaatlink.com" style="color: var(--accent-blue);">info@zaatlink.com</a></li>
+            </ul>
+            <p style="color: var(--text-gray); margin-top: 24px; font-weight: 500;">By using Zaat, you acknowledge that you have read and accepted these Terms & Conditions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function() {
+        const navLinks = document.querySelectorAll('.preview-terms-nav-link');
+        const contentTabs = document.querySelectorAll('.preview-terms-content-tab');
+        
+        if (navLinks.length > 0 && contentTabs.length > 0) {
+          navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              const targetId = link.getAttribute('data-target');
+              
+              // Update active link styling
+              navLinks.forEach(l => l.classList.remove('active-tab'));
+              link.classList.add('active-tab');
+              
+              // Switch visible content tab
+              contentTabs.forEach(tab => {
+                tab.style.display = 'none';
+              });
+              const activeTab = document.getElementById(targetId);
+              if (activeTab) {
+                activeTab.style.display = 'block';
+              }
+            });
+          });
+        }
+      })();
+    </script>
+  </div>
+
   <!-- Shared Footer Mock -->
   <footer class="site-footer">
     <div class="container footer-grid">
       
       <div class="footer-info-col">
         <div class="logo">
-          <span class="logo-text">zaat<span class="logo-dot"></span></span>
+          <img src="assets/zaat-logo-white.png" alt="Zaat Logo" style="height: 40px; width: auto; display: block;">
         </div>
         
         <div class="footer-links-grid">
@@ -692,6 +1694,9 @@
               <li><a href="#" onclick="switchPage('home')">Home</a></li>
               <li><a href="#" onclick="switchPage('collection')">Collection</a></li>
               <li><a href="#" onclick="switchPage('faq')">Help Center</a></li>
+              <li><a href="#" onclick="switchPage('support')">Support</a></li>
+              <li><a href="#" onclick="switchPage('privacy')">Privacy Policy</a></li>
+              <li><a href="#" onclick="switchPage('terms')">Terms & Conditions</a></li>
             </ul>
           </div>
           <div>
@@ -706,9 +1711,8 @@
           <div>
             <h4 class="footer-link-group-title">Contact</h4>
             <ul class="footer-links-list">
-              <li><a href="mailto:info@mysite.com">info@mysite.com</a></li>
-              <li><a href="tel:1234567890">Tel: 123-456-7890</a></li>
-              <li><a href="#">500 Terry Francine St. San Francisco CA 94158</a></li>
+              <li><a href="mailto:info@zaatlink.com">info@zaatlink.com</a></li>
+              <li><a href="tel:+201122253729">Tel: +20 112 225 3729</a></li>
             </ul>
           </div>
         </div>
@@ -755,7 +1759,10 @@
     
     <div class="container footer-bottom">
       <div>
-        <a href="#" class="btn btn-secondary" style="padding: 8px 20px; font-size: 13px;" onclick="switchPage('download')">Download the App</a>
+        <a href="#" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 20px; font-size: 14px; font-weight: 500;" onclick="switchPage('download')">
+          <img src="assets/app-icon.png" alt="Zaat App" style="width: 32px; height: 32px; border-radius: 6px; object-fit: contain; background: #ffffff; padding: 4px; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);">
+          Download the App
+        </a>
       </div>
       <div>
         © 2025 Developed and Designed by Zodiac Universe
@@ -900,6 +1907,97 @@
       document.querySelector('.cart-drawer').classList.add('active');
       document.querySelector('.cart-overlay').classList.add('active');
     }
+    // ==========================================
+    // Card-to-Phone Scroll Animation
+    // ==========================================
+    (function() {
+      const zone = document.getElementById('card-phone-zone');
+      const card = document.getElementById('scroll-card');
+      const phone = document.getElementById('iphone-frame');
+      if (!zone || !card || !phone) return;
+
+      let ticking = false;
+
+      function getScrollableParent() {
+        // In preview mode the scrollable element might be inside the page container
+        const pageHome = document.getElementById('page-home');
+        if (pageHome) {
+          const parent = pageHome.closest('.page-content') || pageHome.closest('[style*="overflow"]');
+          if (parent && parent.scrollHeight > parent.clientHeight) return parent;
+        }
+        return window;
+      }
+
+      const scrollParent = getScrollableParent();
+
+      function animateCard() {
+        const zoneRect = zone.getBoundingClientRect();
+        const phoneRect = phone.getBoundingClientRect();
+        
+        // How far the zone top is from viewport top (negative = scrolled past)
+        const viewH = window.innerHeight;
+        
+        // Animation starts when section enters viewport, ends when phone center is reached
+        const animStart = viewH * 0.3; // card starts animating when zone is 30% up viewport
+        const animEnd = -100; // ends when zone top is above viewport
+        
+        // Progress: 0 = card large at top, 1 = card shrunk inside phone
+        let progress = 1 - ((zoneRect.top - animEnd) / (animStart - animEnd));
+        progress = Math.max(0, Math.min(1, progress));
+        
+        // Easing (ease-out cubic)
+        const eased = 1 - Math.pow(1 - progress, 3);
+        
+        // Card starting dimensions
+        const startW = 380;
+        const endW = 200; // width when inside phone
+        const currentW = startW - (startW - endW) * eased;
+        
+        // Calculate phone screen center position relative to the zone
+        const phoneScreenTop = phoneRect.top - zoneRect.top + 100; // offset for status bar + island
+        
+        // Card Y movement: from top of zone to inside phone screen
+        const startY = 0;
+        const endY = phoneScreenTop;
+        const currentY = startY + (endY - startY) * eased;
+        
+        // Apply transforms
+        card.style.width = currentW + 'px';
+        card.style.transform = `translateX(-50%) translateY(${currentY}px)`;
+        card.style.boxShadow = `0 ${25 - 15 * eased}px ${60 - 30 * eased}px rgba(0,0,0,${0.4 - 0.2 * eased})`;
+        
+        // Add/remove landed class
+        if (progress > 0.95) {
+          card.classList.add('landed');
+        } else {
+          card.classList.remove('landed');
+        }
+        
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(animateCard);
+          ticking = true;
+        }
+      }
+
+      if (scrollParent === window) {
+        window.addEventListener('scroll', onScroll, { passive: true });
+      } else {
+        scrollParent.addEventListener('scroll', onScroll, { passive: true });
+      }
+      
+      // Also listen on window in case
+      window.addEventListener('scroll', onScroll, { passive: true });
+      
+      // Initial position
+      animateCard();
+      // Re-run after page load
+      window.addEventListener('load', () => { animateCard(); });
+    })();
+
   </script>
 </body>
 </html>

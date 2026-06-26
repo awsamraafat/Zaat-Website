@@ -1,0 +1,192 @@
+<style>
+  .privacy-nav-link {
+    font-size: 15px;
+    color: var(--text-gray);
+    display: block;
+    padding: 6px 0;
+    transition: color 0.2s;
+  }
+  .privacy-nav-link:hover {
+    color: var(--text-white);
+  }
+  .privacy-nav-link.active-tab {
+    color: var(--accent-blue) !important;
+    font-weight: 600 !important;
+  }
+</style>
+
+<div class="faq-banner" style="background: linear-gradient(180deg, #131722 0%, #0d0f14 100%);">
+  <div class="container">
+    <h1 style="font-size: 48px; margin-bottom: 16px;">Privacy Policy</h1>
+    <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Last Updated: June 2026</p>
+  </div>
+</div>
+
+<section class="container section-padding">
+  <div style="display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start;">
+    
+    <!-- Left Navigation Sidebar -->
+    <aside class="privacy-sidebar" style="position: sticky; top: 130px; display: flex; flex-direction: column; gap: 12px;">
+      <h4 style="font-size: 14px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Sections</h4>
+      <a href="#welcome" class="privacy-nav-link active-tab" data-target="welcome">Welcome</a>
+      <a href="#info-collect" class="privacy-nav-link" data-target="info-collect">1. Information We Collect</a>
+      <a href="#info-use" class="privacy-nav-link" data-target="info-use">2. How We Use Your Information</a>
+      <a href="#public-info" class="privacy-nav-link" data-target="public-info">3. Public Information</a>
+      <a href="#analytics" class="privacy-nav-link" data-target="analytics">4. Analytics</a>
+      <a href="#data-storage" class="privacy-nav-link" data-target="data-storage">5. Data Storage</a>
+      <a href="#third-party" class="privacy-nav-link" data-target="third-party">6. Third-Party Services</a>
+      <a href="#account-deletion" class="privacy-nav-link" data-target="account-deletion">7. Account Deletion</a>
+      <a href="#children-privacy" class="privacy-nav-link" data-target="children-privacy">8. Children's Privacy</a>
+      <a href="#policy-changes" class="privacy-nav-link" data-target="policy-changes">9. Changes to this Policy</a>
+      <a href="#contact" class="privacy-nav-link" data-target="contact">10. Contact Us</a>
+    </aside>
+
+    <!-- Right Content Body -->
+    <div class="glass-card" style="padding: 48px; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; line-height: 1.8;">
+      
+      <div id="welcome" class="privacy-content-tab" style="display: block;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">Welcome to Zaat</h2>
+        <p style="color: var(--text-gray);">At Zaat, we are committed to protecting your privacy and ensuring transparency regarding how your information is collected, used, and protected.</p>
+      </div>
+
+      <div id="info-collect" class="privacy-content-tab" style="display: none;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">1. Information We Collect</h2>
+        <p style="color: var(--text-gray); margin-bottom: 16px;">When you create a Zaat account, we may collect:</p>
+        <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+          <li>Full Name</li>
+          <li>Email Address</li>
+          <li>Phone Number</li>
+          <li>Profile Information</li>
+          <li>Social Media Links</li>
+          <li>Professional Information (Company, Job Title, Bio, Location)</li>
+          <li>Profile Images and Uploaded Content</li>
+        </ul>
+        <p style="color: var(--text-gray); margin-bottom: 16px;">When visitors interact with your profile, we may collect:</p>
+        <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+          <li>Device Information</li>
+          <li>Browser Information</li>
+          <li>Operating System Type</li>
+          <li>Page Views</li>
+          <li>QR Scan Activity</li>
+          <li>NFC Tap Activity</li>
+          <li>Link Click Analytics</li>
+        </ul>
+      </div>
+
+      <div id="info-use" class="privacy-content-tab" style="display: none;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">2. How We Use Your Information</h2>
+        <p style="color: var(--text-gray); margin-bottom: 16px;">We use collected information to:</p>
+        <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+          <li>Create and manage your digital profile</li>
+          <li>Generate your public profile page</li>
+          <li>Enable NFC and QR sharing functionality</li>
+          <li>Improve application performance</li>
+          <li>Provide analytics and engagement insights</li>
+          <li>Respond to support requests</li>
+          <li>Prevent abuse, fraud, and unauthorized activity</li>
+        </ul>
+      </div>
+
+      <div id="public-info" class="privacy-content-tab" style="display: none;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">3. Public Information</h2>
+        <p style="color: var(--text-gray); margin-bottom: 12px;">Information you choose to display publicly on your profile may be visible to anyone who accesses your profile link, scans your QR code, or taps your NFC product.</p>
+        <p style="color: var(--text-gray);">You control the visibility of your profile information through your account settings.</p>
+      </div>
+
+      <div id="analytics" class="privacy-content-tab" style="display: none;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">4. Analytics</h2>
+        <p style="color: var(--text-gray); margin-bottom: 16px;">Zaat provides profile analytics including:</p>
+        <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+          <li>Profile Views</li>
+          <li>QR Scans</li>
+          <li>NFC Taps</li>
+          <li>Link Clicks</li>
+          <li>Device Statistics</li>
+        </ul>
+        <p style="color: var(--text-gray); margin-top: 16px;">These analytics are used solely to help users understand profile engagement.</p>
+      </div>
+
+      <div id="data-storage" class="privacy-content-tab" style="display: none;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">5. Data Storage</h2>
+        <p style="color: var(--text-gray); margin-bottom: 12px;">Your information is securely stored using trusted cloud infrastructure and industry-standard security practices.</p>
+        <p style="color: var(--text-gray);">While we take reasonable measures to protect your information, no online platform can guarantee absolute security.</p>
+      </div>
+
+      <div id="third-party" class="privacy-content-tab" style="display: none;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">6. Third-Party Services</h2>
+        <p style="color: var(--text-gray); margin-bottom: 16px;">Zaat may utilize trusted third-party providers for:</p>
+        <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+          <li>Authentication</li>
+          <li>Cloud Storage</li>
+          <li>Analytics Processing</li>
+          <li>Payment Processing</li>
+          <li>Customer Support</li>
+        </ul>
+        <p style="color: var(--text-gray); margin-top: 16px;">These providers process information only as necessary to provide their services.</p>
+      </div>
+
+      <div id="account-deletion" class="privacy-content-tab" style="display: none;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">7. Account Deletion</h2>
+        <p style="color: var(--text-gray); margin-bottom: 12px;">Users may request deletion of their account and associated data by contacting Zaat Support.</p>
+        <p style="color: var(--text-gray);">Certain information may be retained when required by law or for legitimate business purposes.</p>
+      </div>
+
+      <div id="children-privacy" class="privacy-content-tab" style="display: none;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">8. Children's Privacy</h2>
+        <p style="color: var(--text-gray); margin-bottom: 12px;">Zaat services are not intended for children under the age of 13.</p>
+        <p style="color: var(--text-gray);">We do not knowingly collect personal information from children.</p>
+      </div>
+
+      <div id="policy-changes" class="privacy-content-tab" style="display: none;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">9. Changes to this Policy</h2>
+        <p style="color: var(--text-gray); margin-bottom: 12px;">We may update this Privacy Policy periodically.</p>
+        <p style="color: var(--text-gray);">Updates will be published on this page with a revised effective date.</p>
+      </div>
+
+      <div id="contact" class="privacy-content-tab" style="display: none;">
+        <h2 style="font-size: 24px; margin-bottom: 16px; color: var(--text-white); font-family: var(--font-title);">10. Contact Us</h2>
+        <p style="color: var(--text-gray); margin-bottom: 16px;">For privacy-related questions, please contact:</p>
+        <ul style="color: var(--text-gray); padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+          <li>Email: <a href="mailto:info@zaatlink.com" style="color: var(--accent-blue);">info@zaatlink.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.privacy-nav-link');
+    const contentTabs = document.querySelectorAll('.privacy-content-tab');
+    
+    if (navLinks.length > 0 && contentTabs.length > 0) {
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('data-target');
+          
+          // Update active link styling
+          navLinks.forEach(l => l.classList.remove('active-tab'));
+          link.classList.add('active-tab');
+          
+          // Switch visible content tab
+          contentTabs.forEach(tab => {
+            tab.style.display = 'none';
+          });
+          const activeTab = document.getElementById(targetId);
+          if (activeTab) {
+            activeTab.style.display = 'block';
+          }
+        });
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Privacy Policy",
+  "settings": []
+}
+{% endschema %}
